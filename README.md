@@ -23,12 +23,10 @@ training can be located on it.
 8. [Outputs](#8-outputs)
 9. [Hypotheses → where each is computed](#9-hypotheses-where-each-is-computed)
 10. [Data and models: what is actually downloaded](#10-data-and-models-what-is-actually-downloaded)
-11. [Two deviations from the spec](#11-two-deviations-from-the-spec)
-12. [Logging](#12-logging)
-13. [Only one model is ever in GPU memory](#13-only-one-model-is-ever-in-gpu-memory)
-14. [Tuning for your GPU](#14-tuning-for-your-gpu)
-15. [Troubleshooting](#15-troubleshooting)
-16. [Repository layout](#16-repository-layout)
+11. [Logging](#11-logging)
+12. [Only one model is ever in GPU memory](#12-only-one-model-is-ever-in-gpu-memory)
+13. [Tuning for your GPU](#13-tuning-for-your-gpu)
+14. [Repository layout](#14-repository-layout)
 
 ---
 
@@ -454,7 +452,7 @@ gold labels agree across every language before you spend GPU time.
 ---
 
 
-## 12. Logging
+## 11. Logging
 
 Four sinks, always:
 
@@ -477,7 +475,7 @@ grep -E "^H[1-5]|Pareto|gap" logs/adhoc/analyze.log
 
 ---
 
-## 13. Only one model is ever in GPU memory
+## 12. Only one model is ever in GPU memory
 
 With `gpu_memory_utilization: 0.90`, vLLM reserves ~43 GB of a 48 GB card for the
 KV cache. **Two models cannot co-reside.** The pipeline therefore loads models
@@ -519,7 +517,7 @@ also works and always has — `report` merges runs.
 
 ---
 
-## 14. Tuning for your GPU
+## 13. Tuning for your GPU
 
 Defaults in `configs/default.yaml` are set for **one 48 GB card** with an 8B bf16
 model (16 GB weights, the rest KV cache):
@@ -537,7 +535,7 @@ models:
 
 * **OOM at load:** lower `gpu_memory_utilization` to `0.85`, then `max_num_seqs`
   to 64. If it happens on the *second* model, the first was not released — see
-  §13 and use `--model-isolation subprocess`.
+  §12 and use `--model-isolation subprocess`.
 * **OOM mid-run:** lower `max_num_seqs`; leave `gpu_memory_utilization` alone.
 * **Throughput:** raise `chunk_size` (fewer flushes, more work lost on a crash) and
   `max_num_seqs`. 64/128 is a deliberate compromise favouring resumability.
@@ -547,7 +545,7 @@ models:
   `truncation_rate` next to accuracy (see E9).
 
 ---
-## 16. Repository layout
+## 14. Repository layout
 
 ```
 run.sh                       single entrypoint (setup / data / models / generate / report / ...)

@@ -1,0 +1,1638 @@
+{
+  "run_id": "main-full-v2",
+  "exported_at": "2026-08-01T10:12:08+00:00",
+  "git_sha": "43c1613-dirty",
+  "n_generations": 25200,
+  "n_cells": 112,
+  "scored": true,
+  "columns": [
+    "anchor_retention",
+    "answer_chars",
+    "answer_compliant",
+    "answer_target_share",
+    "backend",
+    "condition",
+    "condition_label",
+    "correct",
+    "decoding",
+    "degenerate_cell",
+    "entity_retention",
+    "extraction_failed",
+    "finish_reason",
+    "generated_at",
+    "gold",
+    "in_faithfulness_subsample",
+    "instruction_language",
+    "item_id",
+    "language",
+    "max_new_tokens",
+    "model",
+    "model_hf_id",
+    "model_revision",
+    "n_completion_tokens",
+    "n_entity_anchors",
+    "n_number_anchors",
+    "n_prompt_tokens",
+    "number_retention",
+    "options",
+    "output",
+    "prediction",
+    "prompt",
+    "question",
+    "question_en",
+    "run_id",
+    "sample_id",
+    "sample_index",
+    "seed",
+    "subject",
+    "subject_category",
+    "system_prompt",
+    "task",
+    "trace_alpha_chars",
+    "trace_chars",
+    "trace_compliant",
+    "trace_english_share",
+    "trace_has_target_anchor",
+    "trace_langid_en_share",
+    "trace_langid_target_share",
+    "trace_langid_top",
+    "trace_latin_script_share",
+    "trace_target_script_share",
+    "trace_target_script_tokens",
+    "trace_target_share",
+    "trace_words",
+    "truncated",
+    "user_message",
+    "well_formed_trace"
+  ],
+  "missing_required_columns": [],
+  "missing_provenance_columns": [],
+  "models": [
+    "qwen3-8b",
+    "r1-llama-8b"
+  ],
+  "model_revisions": {
+    "Qwen/Qwen3-8B": "b968826d9c46dd6066d109eabc6255188de91218",
+    "deepseek-ai/DeepSeek-R1-Distill-Llama-8B": "6a6f4aa4197940add57724a7707d069478df56b1"
+  },
+  "languages": [
+    "bn",
+    "de",
+    "en",
+    "es",
+    "hi",
+    "sw",
+    "te"
+  ],
+  "tasks": [
+    "gmmlu",
+    "mgsm"
+  ],
+  "conditions": [
+    "en_cot",
+    "free",
+    "mixed",
+    "target"
+  ],
+  "run_config": {
+    "selection": {
+      "models": [
+        "qwen3-8b"
+      ],
+      "tasks": [
+        "mgsm",
+        "gmmlu"
+      ],
+      "languages": [
+        "en",
+        "hi",
+        "bn",
+        "te",
+        "sw",
+        "de",
+        "es"
+      ],
+      "conditions": [
+        "target",
+        "en_cot",
+        "free",
+        "mixed"
+      ],
+      "limit": null,
+      "n_samples": 1,
+      "backend": "auto",
+      "chunk_size": 64,
+      "max_new_tokens": null,
+      "model_isolation": "inprocess",
+      "config_path": null,
+      "instruction_language": null
+    },
+    "config": {
+      "seed": 20260730,
+      "languages": {
+        "en": {
+          "name": "English",
+          "script": "Latin",
+          "family": "Germanic",
+          "mgsm_source": "mgsm",
+          "gmmlu_config": "en",
+          "typ_distance": 0.0,
+          "resource_proxy_gb": 300.8,
+          "resource_tier": "high",
+          "is_anchor": true
+        },
+        "hi": {
+          "name": "Hindi",
+          "script": "Devanagari",
+          "family": "Indo-Aryan",
+          "mgsm_source": "gsm8k_hi_aligned",
+          "gmmlu_config": "hi",
+          "typ_distance": 0.7,
+          "resource_proxy_gb": 20.2,
+          "resource_tier": "mid",
+          "is_anchor": false
+        },
+        "bn": {
+          "name": "Bengali",
+          "script": "Bengali",
+          "family": "Indo-Aryan",
+          "mgsm_source": "mgsm",
+          "gmmlu_config": "bn",
+          "typ_distance": 0.72,
+          "resource_proxy_gb": 8.4,
+          "resource_tier": "mid",
+          "is_anchor": false
+        },
+        "te": {
+          "name": "Telugu",
+          "script": "Telugu",
+          "family": "Dravidian",
+          "mgsm_source": "mgsm",
+          "gmmlu_config": "te",
+          "typ_distance": 0.8,
+          "resource_proxy_gb": 2.5,
+          "resource_tier": "low",
+          "is_anchor": false
+        },
+        "sw": {
+          "name": "Swahili",
+          "script": "Latin",
+          "family": "Bantu",
+          "mgsm_source": "mgsm",
+          "gmmlu_config": "sw",
+          "typ_distance": 0.55,
+          "resource_proxy_gb": 1.6,
+          "resource_tier": "low",
+          "is_anchor": false
+        },
+        "de": {
+          "name": "German",
+          "script": "Latin",
+          "family": "Germanic",
+          "mgsm_source": "mgsm",
+          "gmmlu_config": "de",
+          "typ_distance": 0.15,
+          "resource_proxy_gb": 66.6,
+          "resource_tier": "high",
+          "is_anchor": false
+        },
+        "es": {
+          "name": "Spanish",
+          "script": "Latin",
+          "family": "Romance",
+          "mgsm_source": "mgsm",
+          "gmmlu_config": "es",
+          "typ_distance": 0.25,
+          "resource_proxy_gb": 53.3,
+          "resource_tier": "high",
+          "is_anchor": false
+        }
+      },
+      "default_languages": [
+        "en",
+        "hi",
+        "bn",
+        "te",
+        "sw",
+        "de",
+        "es"
+      ],
+      "tasks": {
+        "mgsm": {
+          "kind": "numeric",
+          "n_items": 250,
+          "hf_dataset": "juletxara/mgsm",
+          "hf_split": "test",
+          "hindi_bridge": {
+            "hi_dataset": "nvidia/GSM8K-Hi",
+            "hi_config": "default",
+            "hi_split": "test",
+            "en_dataset": "openai/gsm8k",
+            "en_config": "main",
+            "en_split": "test"
+          },
+          "max_new_tokens": 12288
+        },
+        "gmmlu": {
+          "kind": "mcq",
+          "n_items": 200,
+          "hf_dataset": "CohereLabs/Global-MMLU",
+          "hf_split": "test",
+          "cultural_sensitivity_label": "CA",
+          "max_new_tokens": 8192
+        }
+      },
+      "default_tasks": [
+        "mgsm",
+        "gmmlu"
+      ],
+      "models": {
+        "r1-llama-8b": {
+          "hf_id": "deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
+          "family": "r1_distill",
+          "thinking": "always",
+          "dtype": "bfloat16",
+          "max_model_len": 16384,
+          "decoding": {
+            "temperature": 0.6,
+            "top_p": 0.95,
+            "top_k": -1,
+            "min_p": 0.0
+          }
+        },
+        "qwen3-8b": {
+          "hf_id": "Qwen/Qwen3-8B",
+          "family": "qwen3",
+          "thinking": "switchable",
+          "dtype": "bfloat16",
+          "max_model_len": 16384,
+          "decoding": {
+            "temperature": 0.6,
+            "top_p": 0.95,
+            "top_k": 20,
+            "min_p": 0.0
+          }
+        },
+        "r1-qwen-7b": {
+          "hf_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+          "family": "r1_distill",
+          "thinking": "always",
+          "dtype": "bfloat16",
+          "max_model_len": 16384,
+          "decoding": {
+            "temperature": 0.6,
+            "top_p": 0.95,
+            "top_k": -1,
+            "min_p": 0.0
+          }
+        },
+        "qwen3-4b": {
+          "hf_id": "Qwen/Qwen3-4B",
+          "family": "qwen3",
+          "thinking": "switchable",
+          "dtype": "bfloat16",
+          "max_model_len": 16384,
+          "decoding": {
+            "temperature": 0.6,
+            "top_p": 0.95,
+            "top_k": 20,
+            "min_p": 0.0
+          }
+        },
+        "smoke-qwen-0_6b": {
+          "hf_id": "Qwen/Qwen3-0.6B",
+          "family": "qwen3",
+          "thinking": "switchable",
+          "dtype": "float32",
+          "max_model_len": 2048,
+          "decoding": {
+            "temperature": 0.6,
+            "top_p": 0.95,
+            "top_k": 20,
+            "min_p": 0.0
+          }
+        }
+      },
+      "default_models": [
+        "r1-llama-8b",
+        "qwen3-8b"
+      ],
+      "conditions": [
+        "target",
+        "en_cot",
+        "free",
+        "mixed"
+      ],
+      "instruction_language": "en",
+      "generation": {
+        "backend": "auto",
+        "n_samples": 1,
+        "chunk_size": 64,
+        "gpu_memory_utilization": 0.9,
+        "max_num_seqs": 128,
+        "swap_space_gb": 4,
+        "enforce_eager": false,
+        "tensor_parallel_size": 1,
+        "hf_batch_size": 4,
+        "model_isolation": "auto"
+      },
+      "scoring": {
+        "compliance_threshold": 0.5,
+        "anchor_threshold": 0.05,
+        "min_anchor_tokens": 1,
+        "faithfulness_subsample": 50,
+        "min_anchor_token_len": 4,
+        "bootstrap_iters": 10000,
+        "bootstrap_alpha": 0.05
+      }
+    },
+    "backend_resolved": "vllm",
+    "planned_generations": 12600,
+    "run_id": "main-full-v2",
+    "git_sha": "a2327b4-dirty",
+    "written_at": "2026-08-01T04:16:52+00:00",
+    "history": [
+      {
+        "written_at": "2026-07-31T20:10:11+00:00",
+        "git_sha": "a2327b4-dirty",
+        "selection": {
+          "models": [
+            "r1-llama-8b",
+            "qwen3-8b"
+          ],
+          "tasks": [
+            "mgsm",
+            "gmmlu"
+          ],
+          "languages": [
+            "en",
+            "hi",
+            "bn",
+            "te",
+            "sw",
+            "de",
+            "es"
+          ],
+          "conditions": [
+            "target",
+            "en_cot",
+            "free",
+            "mixed"
+          ],
+          "limit": null,
+          "n_samples": 1,
+          "backend": "auto",
+          "chunk_size": 64,
+          "max_new_tokens": null,
+          "model_isolation": "auto",
+          "config_path": null,
+          "instruction_language": null
+        }
+      },
+      {
+        "written_at": "2026-07-31T20:10:29+00:00",
+        "git_sha": "a2327b4-dirty",
+        "selection": {
+          "models": [
+            "r1-llama-8b"
+          ],
+          "tasks": [
+            "mgsm",
+            "gmmlu"
+          ],
+          "languages": [
+            "en",
+            "hi",
+            "bn",
+            "te",
+            "sw",
+            "de",
+            "es"
+          ],
+          "conditions": [
+            "target",
+            "en_cot",
+            "free",
+            "mixed"
+          ],
+          "limit": null,
+          "n_samples": 1,
+          "backend": "auto",
+          "chunk_size": 64,
+          "max_new_tokens": null,
+          "model_isolation": "inprocess",
+          "config_path": null,
+          "instruction_language": null
+        }
+      },
+      {
+        "written_at": "2026-07-31T20:32:38+00:00",
+        "git_sha": "a2327b4-dirty",
+        "selection": {
+          "models": [
+            "r1-llama-8b",
+            "qwen3-8b"
+          ],
+          "tasks": [
+            "mgsm",
+            "gmmlu"
+          ],
+          "languages": [
+            "en",
+            "hi",
+            "bn",
+            "te",
+            "sw",
+            "de",
+            "es"
+          ],
+          "conditions": [
+            "target",
+            "en_cot",
+            "free",
+            "mixed"
+          ],
+          "limit": null,
+          "n_samples": 1,
+          "backend": "auto",
+          "chunk_size": 64,
+          "max_new_tokens": null,
+          "model_isolation": "auto",
+          "config_path": null,
+          "instruction_language": null
+        }
+      },
+      {
+        "written_at": "2026-07-31T20:32:56+00:00",
+        "git_sha": "a2327b4-dirty",
+        "selection": {
+          "models": [
+            "r1-llama-8b"
+          ],
+          "tasks": [
+            "mgsm",
+            "gmmlu"
+          ],
+          "languages": [
+            "en",
+            "hi",
+            "bn",
+            "te",
+            "sw",
+            "de",
+            "es"
+          ],
+          "conditions": [
+            "target",
+            "en_cot",
+            "free",
+            "mixed"
+          ],
+          "limit": null,
+          "n_samples": 1,
+          "backend": "auto",
+          "chunk_size": 64,
+          "max_new_tokens": null,
+          "model_isolation": "inprocess",
+          "config_path": null,
+          "instruction_language": null
+        }
+      }
+    ]
+  },
+  "integrity": {
+    "run_id": "main-full-v2",
+    "verified_at": "2026-08-01T10:12:03+00:00",
+    "n_cells": 112,
+    "n_generations": 25200,
+    "cells": [
+      {
+        "cell": "qwen3-8b/gmmlu/bn/en_cot",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "54e135c35c94aeecf674758c68a60d1ce6d10f2555dbbc08b90fda97c361b7ca",
+        "bytes": 2111221
+      },
+      {
+        "cell": "qwen3-8b/gmmlu/bn/free",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "075eed4bf85e8fb7bf5eb01db61bbfbcb279a5e0487ebded60d25780e5b42f3f",
+        "bytes": 2225784
+      },
+      {
+        "cell": "qwen3-8b/gmmlu/bn/mixed",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "dcd3b129a414f9bbe1eb1065ffcabdd5d9d0330fbb48da8a5cf4e26e4eacb2d6",
+        "bytes": 2158944
+      },
+      {
+        "cell": "qwen3-8b/gmmlu/bn/target",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "de830e9047bfeff8c91b14340c8cfcc6a624a8bd949069f8f01e869dd8689542",
+        "bytes": 2225354
+      },
+      {
+        "cell": "qwen3-8b/gmmlu/de/en_cot",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "4f233ba66bb94da66859801350ffed2e9a08e8a0cea61287b9bf95e1bbe21797",
+        "bytes": 1753732
+      },
+      {
+        "cell": "qwen3-8b/gmmlu/de/free",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "315acd5ab129ae700d9c65fd413b0824f08b6472a6d3c427048d95294548ad0c",
+        "bytes": 1788036
+      },
+      {
+        "cell": "qwen3-8b/gmmlu/de/mixed",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "4f6fe6bef0d22b778c1bb4bcb17a3b141be83d7adb381fa0c2a61f3573cfcecc",
+        "bytes": 1648263
+      },
+      {
+        "cell": "qwen3-8b/gmmlu/de/target",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "0d652dcad6dac822129633b18cf4ed39198302434b2ba1da1940b097472ba6d0",
+        "bytes": 1554403
+      },
+      {
+        "cell": "qwen3-8b/gmmlu/en/en_cot",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "6e458fbb65aa4f4d07d7b1b0531184fdc6cd74aa984d8095d0fe63aa20b55a71",
+        "bytes": 1790739
+      },
+      {
+        "cell": "qwen3-8b/gmmlu/en/free",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "8d81a359bc94cbdcac31eccbaf9f06ea4a070fd8296a765ac1859a57f48af0c3",
+        "bytes": 1957417
+      },
+      {
+        "cell": "qwen3-8b/gmmlu/en/mixed",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "da7208347f8485483d5318d95d183f6619c319675e082eed7c75741ecd1470dd",
+        "bytes": 1691226
+      },
+      {
+        "cell": "qwen3-8b/gmmlu/en/target",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "196d8718c7f24496b63a3aec97463736e0b94e7b83ccb710080210749a67ac4c",
+        "bytes": 1842461
+      },
+      {
+        "cell": "qwen3-8b/gmmlu/es/en_cot",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "32704210be8d55e0dbee3a201b14982f5330ec436d495bfdf9cfb52edebbc91d",
+        "bytes": 1670682
+      },
+      {
+        "cell": "qwen3-8b/gmmlu/es/free",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "839b2c48dd753d0ffb7d182ac4636e3e7455c39361ab57b790bb61a2ef5cc3d8",
+        "bytes": 1709929
+      },
+      {
+        "cell": "qwen3-8b/gmmlu/es/mixed",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "00d76246dddfc17b7226a35e99936462c81ab2956ad0d20bd56eb1451e5a069d",
+        "bytes": 1629541
+      },
+      {
+        "cell": "qwen3-8b/gmmlu/es/target",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "d15717306962d289d8f04f75c2a94cab689a854e3b2ceca36347ee7646c8e1c1",
+        "bytes": 1591545
+      },
+      {
+        "cell": "qwen3-8b/gmmlu/hi/en_cot",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "8a29eb8acaed20cdf7b29989aa0d6237e74f9ef18e03e08d87858048d291b8d3",
+        "bytes": 2100253
+      },
+      {
+        "cell": "qwen3-8b/gmmlu/hi/free",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "237c368291328d5840f00c94f26170cd2e648cce66d4d7704827522e88ff16f9",
+        "bytes": 2177636
+      },
+      {
+        "cell": "qwen3-8b/gmmlu/hi/mixed",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "a4959f80a45ddc9f9cce8b40e62fc56cc1d61a83b6ecdacfb21faf0f4668600d",
+        "bytes": 2037679
+      },
+      {
+        "cell": "qwen3-8b/gmmlu/hi/target",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "8657a287f7a53a2647599a05f85b9700841ff1c68602bad6b7d831f7fa757ec4",
+        "bytes": 2214177
+      },
+      {
+        "cell": "qwen3-8b/gmmlu/sw/en_cot",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "7de18d49d86fedd656f161fc38bc37056c479c24508f4c6c4b51459624af1980",
+        "bytes": 2034979
+      },
+      {
+        "cell": "qwen3-8b/gmmlu/sw/free",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "121f5bc2805e3121d271c2179f5d86b844a7459c19bd1d20abfee3a3e21d3cba",
+        "bytes": 2196076
+      },
+      {
+        "cell": "qwen3-8b/gmmlu/sw/mixed",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "174cb49bcf70e623dd57c590aca19fd9b6a2848538e817a438191e98b8fadfdd",
+        "bytes": 2024883
+      },
+      {
+        "cell": "qwen3-8b/gmmlu/sw/target",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "704d578b42388aa3e2f3613d1deb704c84e543fd78acc4990cf70ad4496dac15",
+        "bytes": 2360910
+      },
+      {
+        "cell": "qwen3-8b/gmmlu/te/en_cot",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "cb90c5ed236b166b47ce3a2e827797cd734629437ebf6227d7e02f5f0b13ad1d",
+        "bytes": 2115694
+      },
+      {
+        "cell": "qwen3-8b/gmmlu/te/free",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "934c79bdf48525a7d9d5f018c5bdea237408a28be7e173c9c92a9d3cbf8589ae",
+        "bytes": 2294573
+      },
+      {
+        "cell": "qwen3-8b/gmmlu/te/mixed",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "1b6d9a2ce7fbb8c8d42a241b81a91ac32141cd43f35a2962bd7e040abc911ea2",
+        "bytes": 2021547
+      },
+      {
+        "cell": "qwen3-8b/gmmlu/te/target",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "15a44ffcee27849bfcdf5bb88b43b7f7984b484e9fbd339c873e05227a70bc29",
+        "bytes": 2197518
+      },
+      {
+        "cell": "qwen3-8b/mgsm/bn/en_cot",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "a9e37113e6187552d62c06e10b786d9e5af9c83a8b7508f240720eef63ed2606",
+        "bytes": 1908090
+      },
+      {
+        "cell": "qwen3-8b/mgsm/bn/free",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "b793a7b3b3ae719c1130e9876b73251da21d8decde0df7ccbbe0d7b340c30423",
+        "bytes": 2077149
+      },
+      {
+        "cell": "qwen3-8b/mgsm/bn/mixed",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "1fbce495422f224f134ea68be1239aa326179f6fd6b28abc73dcaac2d5ce4efa",
+        "bytes": 1926196
+      },
+      {
+        "cell": "qwen3-8b/mgsm/bn/target",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "b2227d5194102e5b613963751aa74ada8d368dfbd24328dab1191cfe10e66d29",
+        "bytes": 1926364
+      },
+      {
+        "cell": "qwen3-8b/mgsm/de/en_cot",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "f6502b9de40062756f5bfacfd7f03124e07384b94a2745ab4dec3819208519c4",
+        "bytes": 1392992
+      },
+      {
+        "cell": "qwen3-8b/mgsm/de/free",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "16ff7e6298cb7216422eb7abe303119343cf3d0873bd33f97fabd198b405a0d9",
+        "bytes": 1499490
+      },
+      {
+        "cell": "qwen3-8b/mgsm/de/mixed",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "bd79ff7d618e5087c9491424678d9830bab0dff4e64b229393f6db5f884ae40a",
+        "bytes": 1407608
+      },
+      {
+        "cell": "qwen3-8b/mgsm/de/target",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "5359a750501f94ef749c39748f16fa814481bdd0b0054bf7c3269512fb50815e",
+        "bytes": 1303746
+      },
+      {
+        "cell": "qwen3-8b/mgsm/en/en_cot",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "661c8b5cb2f7dadb458157e2e64c96a4c72e66f8b64c2bab3fa64f553392ab0b",
+        "bytes": 1415982
+      },
+      {
+        "cell": "qwen3-8b/mgsm/en/free",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "8730e90d984d4ad56cdf3c9fc302dfce02ae1b448da9acf10afa3943ed1dbb6d",
+        "bytes": 1435965
+      },
+      {
+        "cell": "qwen3-8b/mgsm/en/mixed",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "9c80a303079288cdeef78c12a1ccf458b855453973bef32c2899ccf366ff1a1d",
+        "bytes": 1327328
+      },
+      {
+        "cell": "qwen3-8b/mgsm/en/target",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "f4a88534322c4342c0eaa1067f2f0b75853e62f09625c039d1d344cba0fbb77a",
+        "bytes": 1391714
+      },
+      {
+        "cell": "qwen3-8b/mgsm/es/en_cot",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "e25ed48ad66b952515d44e5c1d95ca87ede2ccddfa26a1db9794932f9812425e",
+        "bytes": 1420538
+      },
+      {
+        "cell": "qwen3-8b/mgsm/es/free",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "90fa16aca9630408274b1c9f8176a376ece64163cb109802e2442fe643c0b89d",
+        "bytes": 1499215
+      },
+      {
+        "cell": "qwen3-8b/mgsm/es/mixed",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "4fa63b7237c5f3bdda85625cfc65098cff34724b1ef35906ba4aa37700cfa083",
+        "bytes": 1378289
+      },
+      {
+        "cell": "qwen3-8b/mgsm/es/target",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "6760049d5f808a5c317e5e950d6504077d0e906c9ce493f7430de3c1aecc0d77",
+        "bytes": 1361997
+      },
+      {
+        "cell": "qwen3-8b/mgsm/hi/en_cot",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "83f20cd52b4b0a5c9442f63f90f28947d4478b750e84a4007e22bf7be8a4e8f2",
+        "bytes": 1886959
+      },
+      {
+        "cell": "qwen3-8b/mgsm/hi/free",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "608e76f93c302a5ef4d0022f6a3ffcace18066b8e96f72f9e33672aa104d5e56",
+        "bytes": 1889208
+      },
+      {
+        "cell": "qwen3-8b/mgsm/hi/mixed",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "480a753cd7b5e9fabb96fd502d26579a6cad2e0e666aca100c449f40daca8863",
+        "bytes": 1814223
+      },
+      {
+        "cell": "qwen3-8b/mgsm/hi/target",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "5efb754f8f5b87f952075035996bbab63eeaac6bb2eb35a9ea6d6c098357467f",
+        "bytes": 1920557
+      },
+      {
+        "cell": "qwen3-8b/mgsm/sw/en_cot",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "dcb4206e7a25b3064245670c7f85852e68a39c1c5c5358344f198d362330de30",
+        "bytes": 2395811
+      },
+      {
+        "cell": "qwen3-8b/mgsm/sw/free",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "3f79f259acea906acd9c5bac37af41c5afe24a4116d031d4766ec9a6e1ac8515",
+        "bytes": 2688275
+      },
+      {
+        "cell": "qwen3-8b/mgsm/sw/mixed",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "e9ca460a34e29b6d3bfea98585e166f34773c4ab1c81dfc494ad30c5ff435b92",
+        "bytes": 2166276
+      },
+      {
+        "cell": "qwen3-8b/mgsm/sw/target",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "c7c0e654621b03eafd275aec4c7421936ab5223cfbba4cd65ef5bb8d789418c3",
+        "bytes": 2124177
+      },
+      {
+        "cell": "qwen3-8b/mgsm/te/en_cot",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "f2567130c1e54f62fc9f5c5dd1aa785ccf716dc8a339ec47f72f2cfe03661932",
+        "bytes": 2175935
+      },
+      {
+        "cell": "qwen3-8b/mgsm/te/free",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "9bbcd77e84cc21f31885e085b81edff5b1dde9e21576b2a26e1ee2145208b3f0",
+        "bytes": 2341431
+      },
+      {
+        "cell": "qwen3-8b/mgsm/te/mixed",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "396aa70058b89290236d1d57a476c0fb697d29dfc188b50b97ed44b1cc9c15b9",
+        "bytes": 2232699
+      },
+      {
+        "cell": "qwen3-8b/mgsm/te/target",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "11dd0778e07315fc0b14941b464dd383981a4839310649e74310c0c175f0a555",
+        "bytes": 2265672
+      },
+      {
+        "cell": "r1-llama-8b/gmmlu/bn/en_cot",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "d376d9c747df75b58d9c7c4cd3438aeeb2769dec29262f46691f2423d9e1d5fc",
+        "bytes": 2969102
+      },
+      {
+        "cell": "r1-llama-8b/gmmlu/bn/free",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "13baeecdf0df87b7522442fb725a42b3f213cce2a2632fe310ab3a4d4d6ac4a1",
+        "bytes": 3555815
+      },
+      {
+        "cell": "r1-llama-8b/gmmlu/bn/mixed",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "206841577ac82c2985ce1c4863c52608c6c250a300acfbb1a3d23e94bd61a0fd",
+        "bytes": 2616818
+      },
+      {
+        "cell": "r1-llama-8b/gmmlu/bn/target",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "df0fdc0970644f6cdc9634d0d8e6842b1263ba0dfbe21e71b17d47f1b41361e0",
+        "bytes": 3034148
+      },
+      {
+        "cell": "r1-llama-8b/gmmlu/de/en_cot",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "98613879ca2fa42c5f0618aba18d436e8eabeb5460ba45619cd032062b8c3cf6",
+        "bytes": 1638633
+      },
+      {
+        "cell": "r1-llama-8b/gmmlu/de/free",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "908fe1eaa5d47c09abcddfcf2da8f8c3562e6c3d711e93d491611b486b40d1b1",
+        "bytes": 1643052
+      },
+      {
+        "cell": "r1-llama-8b/gmmlu/de/mixed",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "db7769badb77adcbba463f779a65294b9dfc7710d1f19fac847ca7535e27a02d",
+        "bytes": 1937792
+      },
+      {
+        "cell": "r1-llama-8b/gmmlu/de/target",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "3586e347564501e1bcbf891e50a2b294d433adaf68a5da01c095c2388ebe0d89",
+        "bytes": 1793496
+      },
+      {
+        "cell": "r1-llama-8b/gmmlu/en/en_cot",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "1d20f1d1db866c9c5ea43dbae5c6f9ce66beb6f5c0786496147d62ab792ae915",
+        "bytes": 1836314
+      },
+      {
+        "cell": "r1-llama-8b/gmmlu/en/free",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "6e64a38d0b6f95e4f5ce11acb5f67a36cac540fca543edf31eac047200cc0008",
+        "bytes": 1706270
+      },
+      {
+        "cell": "r1-llama-8b/gmmlu/en/mixed",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "e9eaa9118cec2c94a3f1ca147b67cb6905d9edcba536351ca5c05435e5373536",
+        "bytes": 1848452
+      },
+      {
+        "cell": "r1-llama-8b/gmmlu/en/target",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "48c976d117dd079c04d46d3a734847e38f2bf7423c8dcf95a13b2ad5c52daeed",
+        "bytes": 1910017
+      },
+      {
+        "cell": "r1-llama-8b/gmmlu/es/en_cot",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "bdcc53a286ad7d84463179347aeef7f959db61306ef643290696f9de277ced75",
+        "bytes": 2173198
+      },
+      {
+        "cell": "r1-llama-8b/gmmlu/es/free",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "fadfb50e3cc6f4d0e7da9bfc5a6d8b057b8f36e4b46b556e429f7c158ef28e5b",
+        "bytes": 1745765
+      },
+      {
+        "cell": "r1-llama-8b/gmmlu/es/mixed",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "495a83255c817569f4e7c868a0a7eb841a2e5a14e0495a55bb92559cbfe84bec",
+        "bytes": 2052035
+      },
+      {
+        "cell": "r1-llama-8b/gmmlu/es/target",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "eb88110aa254fabba0a820d7366b42099595fca1050ea7e76b7536aec8c98c49",
+        "bytes": 1867545
+      },
+      {
+        "cell": "r1-llama-8b/gmmlu/hi/en_cot",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "bc12c6a803435832da245eb06d66a566dc27ad2f76630abc0f0df0838c6c1525",
+        "bytes": 2998944
+      },
+      {
+        "cell": "r1-llama-8b/gmmlu/hi/free",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "f7403926b20e6104f3327f061e5f8d76c7397f674a386d825afb9eeac36a2d42",
+        "bytes": 3020597
+      },
+      {
+        "cell": "r1-llama-8b/gmmlu/hi/mixed",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "d866cf0770c7db9bf2e8c6c1c44f0837c44d5223baddeded89636a027b38548e",
+        "bytes": 2506186
+      },
+      {
+        "cell": "r1-llama-8b/gmmlu/hi/target",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "83b5ed0fe0d3c9f246e5691d5ae9c106e5db2bffc45625785f9fa2c60fcb072d",
+        "bytes": 3320020
+      },
+      {
+        "cell": "r1-llama-8b/gmmlu/sw/en_cot",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "492c1c348acf4d822b3771fee1ba3442bdb0da5e5fb344a66cadfe8ab5fb5f2c",
+        "bytes": 2267794
+      },
+      {
+        "cell": "r1-llama-8b/gmmlu/sw/free",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "4e93501eae3193d96e2ff375de2ed29bce91468015c66aaa68214ea0c2866ccf",
+        "bytes": 2079652
+      },
+      {
+        "cell": "r1-llama-8b/gmmlu/sw/mixed",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "e2eae349da30ffecd7f16ed5a80762f0dc983149626ed5fd37de4a588b7dd1e4",
+        "bytes": 2138875
+      },
+      {
+        "cell": "r1-llama-8b/gmmlu/sw/target",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "f83c15ae0f59a4bb9cad3fdab85a38851ad7dfee829990e08c36df20337abe40",
+        "bytes": 2520498
+      },
+      {
+        "cell": "r1-llama-8b/gmmlu/te/en_cot",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "f17eea3387165b365af30ef018868744a472cb653b7b06c95f735e6453ccdc27",
+        "bytes": 3705335
+      },
+      {
+        "cell": "r1-llama-8b/gmmlu/te/free",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "8a95ee3a8b5fb0006aa2949d1fe14ec17a51eba6787eb80595dc8b5d92cc6861",
+        "bytes": 3358317
+      },
+      {
+        "cell": "r1-llama-8b/gmmlu/te/mixed",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "5d989d7b425ed8ecbee688f68d0c91252c96e64b54ddb6dfa16f2bdad8cf719d",
+        "bytes": 3100026
+      },
+      {
+        "cell": "r1-llama-8b/gmmlu/te/target",
+        "rows": 200,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "16066e49a8cd730b2a25d30c58660fe37e65664084877880ec8c3b41c029230d",
+        "bytes": 3638174
+      },
+      {
+        "cell": "r1-llama-8b/mgsm/bn/en_cot",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "a705a0733bb6d7b24d513648abeabbcbb42e144edf7e601b2675e3b7b7f4f465",
+        "bytes": 4513959
+      },
+      {
+        "cell": "r1-llama-8b/mgsm/bn/free",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "2660146ee2c822cecbef08961152b68e51167a06e2d9d7b17d5f5b12a620c722",
+        "bytes": 3311753
+      },
+      {
+        "cell": "r1-llama-8b/mgsm/bn/mixed",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "efb440ab2aad6da5b749c0bd41edbad1f446a450889c32a940baa458a88ff2d8",
+        "bytes": 4231378
+      },
+      {
+        "cell": "r1-llama-8b/mgsm/bn/target",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "6fa5fa1c96369dc5b6ceaf0b294fdd73289606eb63523616be8b4a709edb3ebb",
+        "bytes": 5023074
+      },
+      {
+        "cell": "r1-llama-8b/mgsm/de/en_cot",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "cb5041e3fb89873361e94df1d1d814011112a51bd545535b3bd7284ccac9063e",
+        "bytes": 1452922
+      },
+      {
+        "cell": "r1-llama-8b/mgsm/de/free",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "37b5aa5ebbd3c23be848c521cd1f346a35a9a0dd2f849268e37b90504ab77b54",
+        "bytes": 1131630
+      },
+      {
+        "cell": "r1-llama-8b/mgsm/de/mixed",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "0cd15bd82f289cccf989e686cfcaf6ea7f461be124b43ab283f0ec9a8cda15c8",
+        "bytes": 1688923
+      },
+      {
+        "cell": "r1-llama-8b/mgsm/de/target",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "b5974089394fb1371fad79c90b3dc102a27bd9a1f698f0c30aff7df0e3f83620",
+        "bytes": 1223483
+      },
+      {
+        "cell": "r1-llama-8b/mgsm/en/en_cot",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "fecd4a67f2f96cbae909a3cd7fbc515b69ff488e0c9960410710100bf21fd4d7",
+        "bytes": 1090546
+      },
+      {
+        "cell": "r1-llama-8b/mgsm/en/free",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "796c80008205abeae42680b1f46f2643304629710deae7cd5fa6a8ef3e8c14d0",
+        "bytes": 1008706
+      },
+      {
+        "cell": "r1-llama-8b/mgsm/en/mixed",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "0ef3fd057210a8d7dde47a8e4df8fa698ab9baa075ebbf45b85efc68d0d7d66b",
+        "bytes": 1171247
+      },
+      {
+        "cell": "r1-llama-8b/mgsm/en/target",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "c4af939894d6f0eca92ab1fa90f882a98892c31902a4d58e82cfdd207b596cd0",
+        "bytes": 1139918
+      },
+      {
+        "cell": "r1-llama-8b/mgsm/es/en_cot",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "e61b8e3e7c65de06b705e6e1f1cfc841f9496c952e48ba89e25db5c02fab0043",
+        "bytes": 2799532
+      },
+      {
+        "cell": "r1-llama-8b/mgsm/es/free",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "31e6004cbf034dd850fbb681794ddc0d7f66dc4340791b3dc53d538f6a1ffbb3",
+        "bytes": 1619375
+      },
+      {
+        "cell": "r1-llama-8b/mgsm/es/mixed",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "e35ddff426887ab219456bdc0d5efa196ba31e249795d1b302a1e3cbcd43fbfb",
+        "bytes": 2543816
+      },
+      {
+        "cell": "r1-llama-8b/mgsm/es/target",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "8d98c6b369403c0112742eab20d725c5c82782fd15ee1dd99600fea1fa3804dc",
+        "bytes": 1764274
+      },
+      {
+        "cell": "r1-llama-8b/mgsm/hi/en_cot",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "ac850c54451fdccd2ea91927248452b914b17aa3970edc9cf60ac8d9076384fc",
+        "bytes": 3803072
+      },
+      {
+        "cell": "r1-llama-8b/mgsm/hi/free",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "057c35e73a62cddefe46e07ccc952bc5f94cbfa7b4b701c5463397c04fb84d24",
+        "bytes": 3039038
+      },
+      {
+        "cell": "r1-llama-8b/mgsm/hi/mixed",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "2aa949aec45bb004642e0494e2aee56df9fa2f7377fac131a6a151a5d1c4f72d",
+        "bytes": 4262129
+      },
+      {
+        "cell": "r1-llama-8b/mgsm/hi/target",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "de87726fa87bffc5ac1538661c2ce60a9e9339e9f263e8ca841e7f96d07f36e8",
+        "bytes": 3629684
+      },
+      {
+        "cell": "r1-llama-8b/mgsm/sw/en_cot",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "654a429decc5c31eb78a154cddaec50f6ea2bd76ef77254a3dfb7cbc2d533aef",
+        "bytes": 3218196
+      },
+      {
+        "cell": "r1-llama-8b/mgsm/sw/free",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "c612172ec7d7682597ef2312dfafe8a68004d7359bf644be7dc9e396f673deaa",
+        "bytes": 3389868
+      },
+      {
+        "cell": "r1-llama-8b/mgsm/sw/mixed",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "2b1e03d9672e4b3d6de52707ed0f9781332973f2e7694a1bac02f89e872450f5",
+        "bytes": 3834386
+      },
+      {
+        "cell": "r1-llama-8b/mgsm/sw/target",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "f0c773acdb4636d90108b4a8aa080fd0f9dbd11c6391230bb3f4e6517feeaebc",
+        "bytes": 4757390
+      },
+      {
+        "cell": "r1-llama-8b/mgsm/te/en_cot",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "d8033eaff7317f4977e4770193e9986ba5b1bd982f36c103fff0787781e4b8c8",
+        "bytes": 3258183
+      },
+      {
+        "cell": "r1-llama-8b/mgsm/te/free",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "435fd38bc9f0406eb0f39a6ba8fbd6dfabaf094e95ef7a8470bafb13cc410e1e",
+        "bytes": 2323404
+      },
+      {
+        "cell": "r1-llama-8b/mgsm/te/mixed",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "bf87a2446b0875a51223ba17391a7164636e954152fdf1d9b23b98c81057dd6c",
+        "bytes": 4110611
+      },
+      {
+        "cell": "r1-llama-8b/mgsm/te/target",
+        "rows": 250,
+        "duplicates": 0,
+        "empty_outputs": 0,
+        "bad_lines": 0,
+        "status": "done",
+        "sha256": "12e23e0fb6fd3371099a9eb933b49edb49171d752918daffea5972ad2f6fe4b5",
+        "bytes": 4755185
+      }
+    ],
+    "problems": [],
+    "ok": true
+  },
+  "predictions_parquet": {
+    "path": "predictions.parquet",
+    "bytes": 41730331,
+    "sha256": "2e6971babebc36542afa21ebfb4a406bc692c33e7cf661470c5985730d52f23f"
+  }
+}

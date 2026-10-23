@@ -1,0 +1,1060 @@
+{
+  "n_generations": 25200,
+  "runs": [
+    "main-full-v2"
+  ],
+  "models": [
+    "qwen3-8b",
+    "r1-llama-8b"
+  ],
+  "tasks": [
+    "gmmlu",
+    "mgsm"
+  ],
+  "languages": [
+    "bn",
+    "de",
+    "en",
+    "es",
+    "hi",
+    "sw",
+    "te"
+  ],
+  "conditions": [
+    "en_cot",
+    "free",
+    "mixed",
+    "target"
+  ],
+  "verdicts": {
+    "H1": {
+      "status": "ok",
+      "en_cot_minus_target_pp": {
+        "bn": -4.2,
+        "de": 1.82,
+        "es": 1.05,
+        "hi": 0.98,
+        "sw": 0.48,
+        "te": 0.95
+      },
+      "mean_gap_distant_pp": -0.44999999999999996,
+      "mean_gap_close_pp": 1.4375,
+      "gap_larger_for_distant": false,
+      "spearman_gap_vs_typ_distance": {
+        "rho": -0.7142857142857143,
+        "p": 0.11078717201166179
+      },
+      "n_significant_positive": 0,
+      "n_significant_negative": 2,
+      "interpretation": "H1 predicts En-CoT >= Mixed > Target for hi/bn/te/sw with a smaller gap for de/es. Positive en_cot-target deltas and a positive Spearman rho against typological distance support it."
+    },
+    "H2": {
+      "status": "ok",
+      "per_cell": [
+        {
+          "model": "qwen3-8b",
+          "task": "gmmlu",
+          "language": "bn",
+          "target_acc": 0.745,
+          "mixed_acc": 0.72,
+          "en_cot_acc": 0.72,
+          "recovery_fraction": 1.0,
+          "mixed_target_anchor_rate": 0.45,
+          "en_cot_target_anchor_rate": 0.26
+        },
+        {
+          "model": "qwen3-8b",
+          "task": "gmmlu",
+          "language": "de",
+          "target_acc": 0.805,
+          "mixed_acc": 0.835,
+          "en_cot_acc": 0.82,
+          "recovery_fraction": 2.0000000000000075,
+          "mixed_target_anchor_rate": 0.225,
+          "en_cot_target_anchor_rate": 0.175
+        },
+        {
+          "model": "qwen3-8b",
+          "task": "gmmlu",
+          "language": "en",
+          "target_acc": 0.88,
+          "mixed_acc": 0.865,
+          "en_cot_acc": 0.87,
+          "recovery_fraction": 1.5,
+          "mixed_target_anchor_rate": 1.0,
+          "en_cot_target_anchor_rate": 1.0
+        },
+        {
+          "model": "qwen3-8b",
+          "task": "gmmlu",
+          "language": "es",
+          "target_acc": 0.825,
+          "mixed_acc": 0.835,
+          "en_cot_acc": 0.83,
+          "recovery_fraction": 2.0,
+          "mixed_target_anchor_rate": 0.225,
+          "en_cot_target_anchor_rate": 0.16
+        },
+        {
+          "model": "qwen3-8b",
+          "task": "gmmlu",
+          "language": "hi",
+          "target_acc": 0.765,
+          "mixed_acc": 0.75,
+          "en_cot_acc": 0.78,
+          "recovery_fraction": -1.0,
+          "mixed_target_anchor_rate": 0.49,
+          "en_cot_target_anchor_rate": 0.26
+        },
+        {
+          "model": "qwen3-8b",
+          "task": "gmmlu",
+          "language": "sw",
+          "target_acc": 0.475,
+          "mixed_acc": 0.5,
+          "en_cot_acc": 0.485,
+          "recovery_fraction": 2.5,
+          "mixed_target_anchor_rate": 0.37,
+          "en_cot_target_anchor_rate": 0.25
+        },
+        {
+          "model": "qwen3-8b",
+          "task": "gmmlu",
+          "language": "te",
+          "target_acc": 0.705,
+          "mixed_acc": 0.73,
+          "en_cot_acc": 0.71,
+          "recovery_fraction": 5.0,
+          "mixed_target_anchor_rate": 0.435,
+          "en_cot_target_anchor_rate": 0.275
+        },
+        {
+          "model": "qwen3-8b",
+          "task": "mgsm",
+          "language": "bn",
+          "target_acc": 0.884,
+          "mixed_acc": 0.884,
+          "en_cot_acc": 0.868,
+          "recovery_fraction": -0.0,
+          "mixed_target_anchor_rate": 0.456,
+          "en_cot_target_anchor_rate": 0.36
+        },
+        {
+          "model": "qwen3-8b",
+          "task": "mgsm",
+          "language": "de",
+          "target_acc": 0.908,
+          "mixed_acc": 0.908,
+          "en_cot_acc": 0.9,
+          "recovery_fraction": -0.0,
+          "mixed_target_anchor_rate": 0.22,
+          "en_cot_target_anchor_rate": 0.2
+        },
+        {
+          "model": "qwen3-8b",
+          "task": "mgsm",
+          "language": "en",
+          "target_acc": 0.968,
+          "mixed_acc": 0.972,
+          "en_cot_acc": 0.964,
+          "recovery_fraction": -1.0,
+          "mixed_target_anchor_rate": 1.0,
+          "en_cot_target_anchor_rate": 1.0
+        },
+        {
+          "model": "qwen3-8b",
+          "task": "mgsm",
+          "language": "es",
+          "target_acc": 0.94,
+          "mixed_acc": 0.936,
+          "en_cot_acc": 0.944,
+          "recovery_fraction": -0.9999999999999722,
+          "mixed_target_anchor_rate": 0.232,
+          "en_cot_target_anchor_rate": 0.2
+        },
+        {
+          "model": "qwen3-8b",
+          "task": "mgsm",
+          "language": "hi",
+          "target_acc": 0.856,
+          "mixed_acc": 0.88,
+          "en_cot_acc": 0.872,
+          "recovery_fraction": 1.5,
+          "mixed_target_anchor_rate": 0.396,
+          "en_cot_target_anchor_rate": 0.364
+        },
+        {
+          "model": "qwen3-8b",
+          "task": "mgsm",
+          "language": "sw",
+          "target_acc": 0.576,
+          "mixed_acc": 0.6,
+          "en_cot_acc": 0.556,
+          "recovery_fraction": -1.2000000000000066,
+          "mixed_target_anchor_rate": 0.52,
+          "en_cot_target_anchor_rate": 0.484
+        },
+        {
+          "model": "qwen3-8b",
+          "task": "mgsm",
+          "language": "te",
+          "target_acc": 0.808,
+          "mixed_acc": 0.816,
+          "en_cot_acc": 0.8,
+          "recovery_fraction": -0.9999999999999861,
+          "mixed_target_anchor_rate": 0.556,
+          "en_cot_target_anchor_rate": 0.372
+        },
+        {
+          "model": "r1-llama-8b",
+          "task": "gmmlu",
+          "language": "bn",
+          "target_acc": 0.27,
+          "mixed_acc": 0.21,
+          "en_cot_acc": 0.155,
+          "recovery_fraction": 0.5217391304347827,
+          "mixed_target_anchor_rate": 0.0,
+          "en_cot_target_anchor_rate": 0.0
+        },
+        {
+          "model": "r1-llama-8b",
+          "task": "gmmlu",
+          "language": "de",
+          "target_acc": 0.355,
+          "mixed_acc": 0.465,
+          "en_cot_acc": 0.385,
+          "recovery_fraction": 3.6666666666666647,
+          "mixed_target_anchor_rate": 0.115,
+          "en_cot_target_anchor_rate": 0.095
+        },
+        {
+          "model": "r1-llama-8b",
+          "task": "gmmlu",
+          "language": "en",
+          "target_acc": 0.575,
+          "mixed_acc": 0.57,
+          "en_cot_acc": 0.6,
+          "recovery_fraction": -0.2,
+          "mixed_target_anchor_rate": 0.01,
+          "en_cot_target_anchor_rate": 0.025
+        },
+        {
+          "model": "r1-llama-8b",
+          "task": "gmmlu",
+          "language": "es",
+          "target_acc": 0.325,
+          "mixed_acc": 0.385,
+          "en_cot_acc": 0.35,
+          "recovery_fraction": 2.400000000000003,
+          "mixed_target_anchor_rate": 0.105,
+          "en_cot_target_anchor_rate": 0.06
+        },
+        {
+          "model": "r1-llama-8b",
+          "task": "gmmlu",
+          "language": "hi",
+          "target_acc": 0.24,
+          "mixed_acc": 0.255,
+          "en_cot_acc": 0.24,
+          "recovery_fraction": NaN,
+          "mixed_target_anchor_rate": 0.0,
+          "en_cot_target_anchor_rate": 0.0
+        },
+        {
+          "model": "r1-llama-8b",
+          "task": "gmmlu",
+          "language": "sw",
+          "target_acc": 0.22,
+          "mixed_acc": 0.34,
+          "en_cot_acc": 0.285,
+          "recovery_fraction": 1.8461538461538471,
+          "mixed_target_anchor_rate": 1.0,
+          "en_cot_target_anchor_rate": 1.0
+        },
+        {
+          "model": "r1-llama-8b",
+          "task": "gmmlu",
+          "language": "te",
+          "target_acc": 0.225,
+          "mixed_acc": 0.215,
+          "en_cot_acc": 0.25,
+          "recovery_fraction": -0.40000000000000047,
+          "mixed_target_anchor_rate": 0.0,
+          "en_cot_target_anchor_rate": 0.0
+        },
+        {
+          "model": "r1-llama-8b",
+          "task": "mgsm",
+          "language": "bn",
+          "target_acc": 0.024,
+          "mixed_acc": 0.016,
+          "en_cot_acc": 0.012,
+          "recovery_fraction": 0.6666666666666666,
+          "mixed_target_anchor_rate": 0.0,
+          "en_cot_target_anchor_rate": 0.0
+        },
+        {
+          "model": "r1-llama-8b",
+          "task": "mgsm",
+          "language": "de",
+          "target_acc": 0.172,
+          "mixed_acc": 0.216,
+          "en_cot_acc": 0.208,
+          "recovery_fraction": 1.2222222222222223,
+          "mixed_target_anchor_rate": 0.12,
+          "en_cot_target_anchor_rate": 0.056
+        },
+        {
+          "model": "r1-llama-8b",
+          "task": "mgsm",
+          "language": "en",
+          "target_acc": 0.716,
+          "mixed_acc": 0.712,
+          "en_cot_acc": 0.7,
+          "recovery_fraction": 0.25,
+          "mixed_target_anchor_rate": 0.008,
+          "en_cot_target_anchor_rate": 0.0
+        },
+        {
+          "model": "r1-llama-8b",
+          "task": "mgsm",
+          "language": "es",
+          "target_acc": 0.124,
+          "mixed_acc": 0.096,
+          "en_cot_acc": 0.132,
+          "recovery_fraction": -3.4999999999999964,
+          "mixed_target_anchor_rate": 0.012,
+          "en_cot_target_anchor_rate": 0.016
+        },
+        {
+          "model": "r1-llama-8b",
+          "task": "mgsm",
+          "language": "hi",
+          "target_acc": 0.004,
+          "mixed_acc": 0.004,
+          "en_cot_acc": 0.012,
+          "recovery_fraction": 0.0,
+          "mixed_target_anchor_rate": 0.0,
+          "en_cot_target_anchor_rate": 0.0
+        },
+        {
+          "model": "r1-llama-8b",
+          "task": "mgsm",
+          "language": "sw",
+          "target_acc": 0.036,
+          "mixed_acc": 0.02,
+          "en_cot_acc": 0.0,
+          "recovery_fraction": 0.44444444444444436,
+          "mixed_target_anchor_rate": 1.0,
+          "en_cot_target_anchor_rate": 1.0
+        },
+        {
+          "model": "r1-llama-8b",
+          "task": "mgsm",
+          "language": "te",
+          "target_acc": 0.004,
+          "mixed_acc": 0.016,
+          "en_cot_acc": 0.02,
+          "recovery_fraction": 0.75,
+          "mixed_target_anchor_rate": 0.0,
+          "en_cot_target_anchor_rate": 0.0
+        }
+      ],
+      "mean_recovery_fraction": 0.6654775176514325,
+      "interpretation": "recovery_fraction = (Mixed - Target) / (En-CoT - Target). Values near 1 mean Mixed-CoT recovers En-CoT accuracy; compare mixed_target_anchor_rate against en_cot_target_anchor_rate to show the anchors are retained (H2)."
+    },
+    "H3": {
+      "status": "ok",
+      "target_cot_dominated": {
+        "qwen3-8b/gmmlu/bn": {
+          "dominated": true,
+          "dominated_by": "Free-CoT",
+          "accuracy": 0.745,
+          "mean_completion_tokens": 2006.88
+        },
+        "qwen3-8b/gmmlu/de": {
+          "dominated": false,
+          "dominated_by": "",
+          "accuracy": 0.805,
+          "mean_completion_tokens": 1356.63
+        },
+        "qwen3-8b/gmmlu/en": {
+          "dominated": false,
+          "dominated_by": "",
+          "accuracy": 0.88,
+          "mean_completion_tokens": 1605.37
+        },
+        "qwen3-8b/gmmlu/es": {
+          "dominated": false,
+          "dominated_by": "",
+          "accuracy": 0.825,
+          "mean_completion_tokens": 1331.55
+        },
+        "qwen3-8b/gmmlu/hi": {
+          "dominated": true,
+          "dominated_by": "En-CoT, Free-CoT",
+          "accuracy": 0.765,
+          "mean_completion_tokens": 1920.305
+        },
+        "qwen3-8b/gmmlu/sw": {
+          "dominated": true,
+          "dominated_by": "En-CoT, Free-CoT, Mixed-CoT",
+          "accuracy": 0.475,
+          "mean_completion_tokens": 2818.455
+        },
+        "qwen3-8b/gmmlu/te": {
+          "dominated": true,
+          "dominated_by": "En-CoT, Mixed-CoT",
+          "accuracy": 0.705,
+          "mean_completion_tokens": 2229.95
+        },
+        "qwen3-8b/mgsm/bn": {
+          "dominated": true,
+          "dominated_by": "Mixed-CoT",
+          "accuracy": 0.884,
+          "mean_completion_tokens": 1401.636
+        },
+        "qwen3-8b/mgsm/de": {
+          "dominated": false,
+          "dominated_by": "",
+          "accuracy": 0.908,
+          "mean_completion_tokens": 899.532
+        },
+        "qwen3-8b/mgsm/en": {
+          "dominated": true,
+          "dominated_by": "Mixed-CoT",
+          "accuracy": 0.968,
+          "mean_completion_tokens": 1000.284
+        },
+        "qwen3-8b/mgsm/es": {
+          "dominated": false,
+          "dominated_by": "",
+          "accuracy": 0.94,
+          "mean_completion_tokens": 955.968
+        },
+        "qwen3-8b/mgsm/hi": {
+          "dominated": true,
+          "dominated_by": "En-CoT, Free-CoT, Mixed-CoT",
+          "accuracy": 0.856,
+          "mean_completion_tokens": 1367.256
+        },
+        "qwen3-8b/mgsm/sw": {
+          "dominated": true,
+          "dominated_by": "Mixed-CoT",
+          "accuracy": 0.576,
+          "mean_completion_tokens": 1986.988
+        },
+        "qwen3-8b/mgsm/te": {
+          "dominated": true,
+          "dominated_by": "Free-CoT, Mixed-CoT",
+          "accuracy": 0.808,
+          "mean_completion_tokens": 1994.584
+        },
+        "r1-llama-8b/gmmlu/bn": {
+          "dominated": false,
+          "dominated_by": "",
+          "accuracy": 0.27,
+          "mean_completion_tokens": 2401.235
+        },
+        "r1-llama-8b/gmmlu/de": {
+          "dominated": true,
+          "dominated_by": "En-CoT, Free-CoT",
+          "accuracy": 0.355,
+          "mean_completion_tokens": 1336.78
+        },
+        "r1-llama-8b/gmmlu/en": {
+          "dominated": true,
+          "dominated_by": "En-CoT, Free-CoT",
+          "accuracy": 0.575,
+          "mean_completion_tokens": 1431.23
+        },
+        "r1-llama-8b/gmmlu/es": {
+          "dominated": true,
+          "dominated_by": "Free-CoT",
+          "accuracy": 0.325,
+          "mean_completion_tokens": 1340.56
+        },
+        "r1-llama-8b/gmmlu/hi": {
+          "dominated": true,
+          "dominated_by": "En-CoT, Free-CoT, Mixed-CoT",
+          "accuracy": 0.24,
+          "mean_completion_tokens": 2753.785
+        },
+        "r1-llama-8b/gmmlu/sw": {
+          "dominated": true,
+          "dominated_by": "En-CoT, Mixed-CoT",
+          "accuracy": 0.22,
+          "mean_completion_tokens": 2623.74
+        },
+        "r1-llama-8b/gmmlu/te": {
+          "dominated": true,
+          "dominated_by": "En-CoT, Free-CoT",
+          "accuracy": 0.225,
+          "mean_completion_tokens": 3214.715
+        },
+        "r1-llama-8b/mgsm/bn": {
+          "dominated": false,
+          "dominated_by": "",
+          "accuracy": 0.024,
+          "mean_completion_tokens": 3968.3
+        },
+        "r1-llama-8b/mgsm/de": {
+          "dominated": false,
+          "dominated_by": "",
+          "accuracy": 0.172,
+          "mean_completion_tokens": 680.096
+        },
+        "r1-llama-8b/mgsm/en": {
+          "dominated": false,
+          "dominated_by": "",
+          "accuracy": 0.716,
+          "mean_completion_tokens": 527.412
+        },
+        "r1-llama-8b/mgsm/es": {
+          "dominated": false,
+          "dominated_by": "",
+          "accuracy": 0.124,
+          "mean_completion_tokens": 1097.984
+        },
+        "r1-llama-8b/mgsm/hi": {
+          "dominated": true,
+          "dominated_by": "Free-CoT",
+          "accuracy": 0.004,
+          "mean_completion_tokens": 2632.1
+        },
+        "r1-llama-8b/mgsm/sw": {
+          "dominated": false,
+          "dominated_by": "",
+          "accuracy": 0.036,
+          "mean_completion_tokens": 4948.876
+        },
+        "r1-llama-8b/mgsm/te": {
+          "dominated": true,
+          "dominated_by": "En-CoT, Free-CoT, Mixed-CoT",
+          "accuracy": 0.004,
+          "mean_completion_tokens": 3673.828
+        }
+      },
+      "n_indic_cells_dominated": 10,
+      "n_indic_cells": 12,
+      "n_european_cells_dominated": 2,
+      "n_european_cells": 8,
+      "token_cost_ratio_target_over_en_cot": [
+        {
+          "cell": "qwen3-8b/gmmlu/bn",
+          "language": "bn",
+          "target_over_en_cot": 1.28028580086442,
+          "fertility_ratio": 5.266195660353302
+        },
+        {
+          "cell": "qwen3-8b/gmmlu/de",
+          "language": "de",
+          "target_over_en_cot": 0.9205355082986145,
+          "fertility_ratio": 1.5463334183101982
+        },
+        {
+          "cell": "qwen3-8b/gmmlu/en",
+          "language": "en",
+          "target_over_en_cot": 1.0449756716733656,
+          "fertility_ratio": 1.0
+        },
+        {
+          "cell": "qwen3-8b/gmmlu/es",
+          "language": "es",
+          "target_over_en_cot": 0.9815455721536063,
+          "fertility_ratio": 1.265628080938603
+        },
+        {
+          "cell": "qwen3-8b/gmmlu/hi",
+          "language": "hi",
+          "target_over_en_cot": 1.2179575812159882,
+          "fertility_ratio": 3.6376885938293553
+        },
+        {
+          "cell": "qwen3-8b/gmmlu/sw",
+          "language": "sw",
+          "target_over_en_cot": 1.4658305465552302,
+          "fertility_ratio": 1.90961545497488
+        },
+        {
+          "cell": "qwen3-8b/gmmlu/te",
+          "language": "te",
+          "target_over_en_cot": 1.3992721111912902,
+          "fertility_ratio": 8.359188564165228
+        },
+        {
+          "cell": "qwen3-8b/mgsm/bn",
+          "language": "bn",
+          "target_over_en_cot": 1.073274198587382,
+          "fertility_ratio": 4.724487879274971
+        },
+        {
+          "cell": "qwen3-8b/mgsm/de",
+          "language": "de",
+          "target_over_en_cot": 0.9313429497931343,
+          "fertility_ratio": 1.400275827605212
+        },
+        {
+          "cell": "qwen3-8b/mgsm/en",
+          "language": "en",
+          "target_over_en_cot": 0.9658047697209616,
+          "fertility_ratio": 1.0
+        },
+        {
+          "cell": "qwen3-8b/mgsm/es",
+          "language": "es",
+          "target_over_en_cot": 0.9520266098352819,
+          "fertility_ratio": 1.27983202789158
+        },
+        {
+          "cell": "qwen3-8b/mgsm/hi",
+          "language": "hi",
+          "target_over_en_cot": 1.0643006822081,
+          "fertility_ratio": 3.3572344145911583
+        },
+        {
+          "cell": "qwen3-8b/mgsm/sw",
+          "language": "sw",
+          "target_over_en_cot": 0.8945963711674396,
+          "fertility_ratio": 1.81657294462904
+        },
+        {
+          "cell": "qwen3-8b/mgsm/te",
+          "language": "te",
+          "target_over_en_cot": 1.2067792180133783,
+          "fertility_ratio": 7.6454729642384835
+        },
+        {
+          "cell": "r1-llama-8b/gmmlu/bn",
+          "language": "bn",
+          "target_over_en_cot": 1.025609977469541,
+          "fertility_ratio": 0.1174599690737079
+        },
+        {
+          "cell": "r1-llama-8b/gmmlu/de",
+          "language": "de",
+          "target_over_en_cot": 1.2183336067516086,
+          "fertility_ratio": 1.579717140750279
+        },
+        {
+          "cell": "r1-llama-8b/gmmlu/en",
+          "language": "en",
+          "target_over_en_cot": 1.065716040879391,
+          "fertility_ratio": 1.0
+        },
+        {
+          "cell": "r1-llama-8b/gmmlu/es",
+          "language": "es",
+          "target_over_en_cot": 0.8068420514116846,
+          "fertility_ratio": 1.3354860891194975
+        },
+        {
+          "cell": "r1-llama-8b/gmmlu/hi",
+          "language": "hi",
+          "target_over_en_cot": 1.1165132388507206,
+          "fertility_ratio": 0.0948939019477783
+        },
+        {
+          "cell": "r1-llama-8b/gmmlu/sw",
+          "language": "sw",
+          "target_over_en_cot": 1.3395552583009345,
+          "fertility_ratio": 1.563589551117091
+        },
+        {
+          "cell": "r1-llama-8b/gmmlu/te",
+          "language": "te",
+          "target_over_en_cot": 1.0076118266189824,
+          "fertility_ratio": 0.1656961856513676
+        },
+        {
+          "cell": "r1-llama-8b/mgsm/bn",
+          "language": "bn",
+          "target_over_en_cot": 1.120283618107022,
+          "fertility_ratio": 0.1164509302200847
+        },
+        {
+          "cell": "r1-llama-8b/mgsm/de",
+          "language": "de",
+          "target_over_en_cot": 0.7951958244081304,
+          "fertility_ratio": 1.4986219663673912
+        },
+        {
+          "cell": "r1-llama-8b/mgsm/en",
+          "language": "en",
+          "target_over_en_cot": 1.0671258265282173,
+          "fertility_ratio": 1.0
+        },
+        {
+          "cell": "r1-llama-8b/mgsm/es",
+          "language": "es",
+          "target_over_en_cot": 0.5441630966800611,
+          "fertility_ratio": 1.3460029741080315
+        },
+        {
+          "cell": "r1-llama-8b/mgsm/hi",
+          "language": "hi",
+          "target_over_en_cot": 0.9294952382835785,
+          "fertility_ratio": 0.0874340927759245
+        },
+        {
+          "cell": "r1-llama-8b/mgsm/sw",
+          "language": "sw",
+          "target_over_en_cot": 1.880220601868034,
+          "fertility_ratio": 1.5575710276278694
+        },
+        {
+          "cell": "r1-llama-8b/mgsm/te",
+          "language": "te",
+          "target_over_en_cot": 1.6111047767063864,
+          "fertility_ratio": 0.1572071171356849
+        }
+      ],
+      "spearman_cost_ratio_vs_fertility": {
+        "rho": 0.29460153718452636,
+        "p": 0.12805554238801312
+      },
+      "interpretation": "H3 holds when Target-CoT is Pareto-dominated (accuracy <= and tokens >= some other policy) in the Indic cells but not, or less, in the European ones."
+    },
+    "H4": {
+      "pooled": {
+        "status": "ok",
+        "n": 5400,
+        "params": {
+          "const": -0.5334009841334567,
+          "english_share": 1.3255658441601226,
+          "n_completion_tokens": -0.00029198244827638464
+        },
+        "std_err": {
+          "const": 0.0604069309985751,
+          "english_share": 0.06960223011160609,
+          "n_completion_tokens": 1.6749454888911808e-05
+        },
+        "p_values": {
+          "const": 1.0455520776544743e-18,
+          "english_share": 7.245736457421033e-81,
+          "n_completion_tokens": 4.687492220360921e-68
+        },
+        "conf_int": {
+          "const": [
+            -0.6517963933072601,
+            -0.41500557495965334
+          ],
+          "english_share": [
+            1.1891479798977054,
+            1.4619837084225398
+          ],
+          "n_completion_tokens": [
+            -0.0003248107766193301,
+            -0.00025915411993343915
+          ]
+        },
+        "pseudo_r2": 0.10527583827410736,
+        "odds_ratio_per_10pp_drift": 1.1417436191573298
+      },
+      "status": "ok",
+      "n_cells_positive_significant": 1,
+      "cells_positive_significant": [
+        "qwen3-8b/gmmlu/bn"
+      ],
+      "n_cells_fitted": 21,
+      "interpretation": "H4 predicts a positive coefficient on english_share: within Target-CoT, traces that drift to English are more often correct. This replicates 'mixing is strategic' (2507.15849) at the instruction level rather than by constrained decoding.",
+      "per_cell": {
+        "qwen3-8b/gmmlu/bn": {
+          "status": "ok",
+          "n": 200,
+          "pseudo_r2": 0.10177462611960708,
+          "odds_ratio_per_10pp_drift": 54.73166235038834,
+          "mean_english_share": 0.9926608995517779,
+          "accuracy": 0.745,
+          "drift_split_delta_pp": null,
+          "english_share_coef": 40.02442378354127,
+          "english_share_p": 0.0002143303615958002
+        },
+        "qwen3-8b/gmmlu/de": {
+          "status": "ok",
+          "n": 200,
+          "pseudo_r2": 0.05690556292304938,
+          "odds_ratio_per_10pp_drift": 1.0314327885478587,
+          "mean_english_share": 0.4512943641368856,
+          "accuracy": 0.805,
+          "drift_split_delta_pp": -1.0000000000000009,
+          "english_share_coef": 0.3094889246087074,
+          "english_share_p": 0.4501996952523942
+        },
+        "qwen3-8b/gmmlu/es": {
+          "status": "ok",
+          "n": 200,
+          "pseudo_r2": 0.06986598581164538,
+          "odds_ratio_per_10pp_drift": 0.7792300186587656,
+          "mean_english_share": 0.957257439507736,
+          "accuracy": 0.825,
+          "drift_split_delta_pp": 2.9999999999999916,
+          "english_share_coef": -2.494490024231309,
+          "english_share_p": 0.5093681982296996
+        },
+        "qwen3-8b/gmmlu/hi": {
+          "status": "ok",
+          "n": 200,
+          "pseudo_r2": 0.05573882616493098,
+          "odds_ratio_per_10pp_drift": 5.133649268447791,
+          "mean_english_share": 0.9927216390228331,
+          "accuracy": 0.765,
+          "drift_split_delta_pp": null,
+          "english_share_coef": 16.358167646591262,
+          "english_share_p": 0.088978983373824
+        },
+        "qwen3-8b/gmmlu/sw": {
+          "status": "ok",
+          "n": 200,
+          "pseudo_r2": 0.005071025260854567,
+          "odds_ratio_per_10pp_drift": 1.4275130423703146,
+          "mean_english_share": 0.9596202320497711,
+          "accuracy": 0.475,
+          "drift_split_delta_pp": 11.000000000000004,
+          "english_share_coef": 3.5593379901789453,
+          "english_share_p": 0.2934476599661213
+        },
+        "qwen3-8b/gmmlu/te": {
+          "status": "ok",
+          "n": 200,
+          "pseudo_r2": 0.049284544716564294,
+          "odds_ratio_per_10pp_drift": 6.9923791272318,
+          "mean_english_share": 0.9917195991211962,
+          "accuracy": 0.705,
+          "drift_split_delta_pp": null,
+          "english_share_coef": 19.4482085988548,
+          "english_share_p": 0.05979581127170671
+        },
+        "qwen3-8b/mgsm/bn": {
+          "status": "ok",
+          "n": 250,
+          "pseudo_r2": 0.46431979012509683,
+          "odds_ratio_per_10pp_drift": 0.09397176855851244,
+          "mean_english_share": 0.9843932911572302,
+          "accuracy": 0.884,
+          "drift_split_delta_pp": null,
+          "english_share_coef": -23.647608763054766,
+          "english_share_p": 0.06605624545949969
+        },
+        "qwen3-8b/mgsm/de": {
+          "status": "ok",
+          "n": 250,
+          "pseudo_r2": 0.18532398274282158,
+          "odds_ratio_per_10pp_drift": 1.0764903300027904,
+          "mean_english_share": 0.6613024996550272,
+          "accuracy": 0.908,
+          "drift_split_delta_pp": 6.90736828628129,
+          "english_share_coef": 0.7370605496984987,
+          "english_share_p": 0.2178278998732055
+        },
+        "qwen3-8b/mgsm/es": {
+          "status": "ok",
+          "n": 250,
+          "pseudo_r2": 0.2968016538402517,
+          "odds_ratio_per_10pp_drift": 1.0819235383537649,
+          "mean_english_share": 0.9515259946417559,
+          "accuracy": 0.94,
+          "drift_split_delta_pp": null,
+          "english_share_coef": 0.7874051097140776,
+          "english_share_p": 0.7113562322561042
+        },
+        "qwen3-8b/mgsm/hi": {
+          "status": "ok",
+          "n": 250,
+          "pseudo_r2": 0.21739393106757787,
+          "odds_ratio_per_10pp_drift": 3.851574823088132,
+          "mean_english_share": 0.9872418333012791,
+          "accuracy": 0.856,
+          "drift_split_delta_pp": null,
+          "english_share_coef": 13.484821096215668,
+          "english_share_p": 0.08716419668604179
+        },
+        "qwen3-8b/mgsm/sw": {
+          "status": "ok",
+          "n": 250,
+          "pseudo_r2": 0.13756393098470032,
+          "odds_ratio_per_10pp_drift": 1.0580958141529762,
+          "mean_english_share": 0.9422783088381679,
+          "accuracy": 0.576,
+          "drift_split_delta_pp": 4.799999999999994,
+          "english_share_coef": 0.5647089091691816,
+          "english_share_p": 0.8292712669866991
+        },
+        "qwen3-8b/mgsm/te": {
+          "status": "ok",
+          "n": 250,
+          "pseudo_r2": 0.3849192570357959,
+          "odds_ratio_per_10pp_drift": 1.3970592673439097,
+          "mean_english_share": 0.9808995387235571,
+          "accuracy": 0.808,
+          "drift_split_delta_pp": null,
+          "english_share_coef": 3.343695041021296,
+          "english_share_p": 0.5636502913222813
+        },
+        "r1-llama-8b/gmmlu/bn": {
+          "status": "fit_failed: LinAlgError: Singular matrix",
+          "n": 200,
+          "mean_english_share": 0.9988483875813572,
+          "accuracy": 0.27,
+          "drift_split_delta_pp": null,
+          "english_share_coef": null,
+          "english_share_p": null
+        },
+        "r1-llama-8b/gmmlu/de": {
+          "status": "ok",
+          "n": 200,
+          "pseudo_r2": 0.015526977524613184,
+          "odds_ratio_per_10pp_drift": 17.955423043553914,
+          "mean_english_share": 0.0013509261492821332,
+          "accuracy": 0.355,
+          "drift_split_delta_pp": 15.104166666666668,
+          "english_share_coef": 28.878921887234515,
+          "english_share_p": 0.14312812304000294
+        },
+        "r1-llama-8b/gmmlu/es": {
+          "status": "ok",
+          "n": 200,
+          "pseudo_r2": 0.030263401397647383,
+          "odds_ratio_per_10pp_drift": 8.978460163183476e-05,
+          "mean_english_share": 0.0008620562308201019,
+          "accuracy": 0.325,
+          "drift_split_delta_pp": -18.874907475943747,
+          "english_share_coef": -93.18097071392494,
+          "english_share_p": 0.3804714798247454
+        },
+        "r1-llama-8b/gmmlu/hi": {
+          "status": "ok",
+          "n": 200,
+          "pseudo_r2": 0.002586372217237898,
+          "odds_ratio_per_10pp_drift": 3.5266984152883576,
+          "mean_english_share": 0.9990253582860372,
+          "accuracy": 0.24,
+          "drift_split_delta_pp": null,
+          "english_share_coef": 12.603621401662357,
+          "english_share_p": 0.7774903935081554
+        },
+        "r1-llama-8b/gmmlu/sw": {
+          "status": "ok",
+          "n": 200,
+          "pseudo_r2": 0.0011693583499235993,
+          "odds_ratio_per_10pp_drift": 0.7014386982974339,
+          "mean_english_share": 0.003443382086143746,
+          "accuracy": 0.22,
+          "drift_split_delta_pp": -12.024756852343058,
+          "english_share_coef": -3.5462176986185376,
+          "english_share_p": 0.8252800162839082
+        },
+        "r1-llama-8b/gmmlu/te": {
+          "status": "ok",
+          "n": 200,
+          "pseudo_r2": 0.0016554181677976842,
+          "odds_ratio_per_10pp_drift": 0.18666124046344587,
+          "mean_english_share": 0.9994256310254324,
+          "accuracy": 0.225,
+          "drift_split_delta_pp": null,
+          "english_share_coef": -16.784598532893874,
+          "english_share_p": 0.7415026648400309
+        },
+        "r1-llama-8b/mgsm/bn": {
+          "status": "ok",
+          "n": 250,
+          "pseudo_r2": 0.016662300531544716,
+          "odds_ratio_per_10pp_drift": Infinity,
+          "mean_english_share": 0.9999420357256125,
+          "accuracy": 0.024,
+          "drift_split_delta_pp": null,
+          "english_share_coef": 64693.493552570064,
+          "english_share_p": 0.8213681369473403
+        },
+        "r1-llama-8b/mgsm/de": {
+          "status": "ok",
+          "n": 250,
+          "pseudo_r2": 0.020663289601080215,
+          "odds_ratio_per_10pp_drift": 2.169784693406606e-07,
+          "mean_english_share": 0.0009444444444444444,
+          "accuracy": 0.172,
+          "drift_split_delta_pp": -17.338709677419356,
+          "english_share_coef": -153.43467707956836,
+          "english_share_p": 0.9987160835341228
+        },
+        "r1-llama-8b/mgsm/es": {
+          "status": "ok",
+          "n": 250,
+          "pseudo_r2": 0.044991700052605554,
+          "odds_ratio_per_10pp_drift": 18764799471.30741,
+          "mean_english_share": 0.00012651619837248578,
+          "accuracy": 0.124,
+          "drift_split_delta_pp": 37.903225806451616,
+          "english_share_coef": 236.55248583161742,
+          "english_share_p": 0.3120807056093171
+        },
+        "r1-llama-8b/mgsm/hi": {
+          "status": "fit_failed: LinAlgError: Singular matrix",
+          "n": 250,
+          "mean_english_share": 0.99814885535554,
+          "accuracy": 0.004,
+          "drift_split_delta_pp": null,
+          "english_share_coef": null,
+          "english_share_p": null
+        },
+        "r1-llama-8b/mgsm/sw": {
+          "status": "ok",
+          "n": 250,
+          "pseudo_r2": 0.021892345084901565,
+          "odds_ratio_per_10pp_drift": 0.0,
+          "mean_english_share": 0.0021277693172325374,
+          "accuracy": 0.036,
+          "drift_split_delta_pp": -3.829787234042553,
+          "english_share_coef": -10590.509610059662,
+          "english_share_p": 0.9999838992277814
+        },
+        "r1-llama-8b/mgsm/te": {
+          "status": "fit_failed: LinAlgError: Singular matrix",
+          "n": 250,
+          "mean_english_share": 0.9996263124474797,
+          "accuracy": 0.004,
+          "drift_split_delta_pp": null,
+          "english_share_coef": null,
+          "english_share_p": null
+        }
+      }
+    },
+    "H5": {
+      "status": "ok",
+      "argmax_condition_counts": {
+        "anchor_retention": {
+          "en_cot": 7,
+          "target": 7,
+          "free": 9,
+          "mixed": 5
+        },
+        "entity_retention": {
+          "en_cot": 8,
+          "target": 7,
+          "free": 8,
+          "mixed": 5
+        },
+        "number_retention": {
+          "mixed": 5,
+          "en_cot": 13,
+          "free": 7,
+          "target": 3
+        }
+      },
+      "interpretation": "H5 predicts Mixed-CoT has the highest retention. Counts show, per metric, how many (model, task, language) cells each policy wins."
+    }
+  },
+  "literature_map": {
+    "target": "XReasoning (2505.22888): controlling the thinking language costs accuracy; Long CoT Across Languages (2508.14828) Target-CoT condition",
+    "en_cot": "Long CoT Across Languages (2508.14828) En-CoT condition; the operating point consistency training moves *away* from",
+    "free": "Language Matters (2505.17407): models default to hub languages when unconstrained",
+    "mixed": "KO-REAson / Language-Mixed CoT: trained mixed CoT beats both monolingual extremes; Impact of Language Mixing (2507.15849): mixing is strategic"
+  },
+  "caveats": [
+    "Prompted conditions, not trained policies. The training-side price of consistency (5-10 pp, Cross-lingual Collapse 2506.05850) is cited, not measured here.",
+    "Retention is verbatim-anchor retention: a lower bound on faithfulness.",
+    "typ_distance is an author-assigned ordinal proxy, not a measured lang2vec distance.",
+    "Truncation rates differ by language because target-script traces are longer; always report truncation_rate alongside accuracy.",
+    "For language=en, Target-CoT/En-CoT/Mixed-CoT are definitionally the same instruction; those cells are flagged degenerate and measure prompt-wording noise."
+  ]
+}

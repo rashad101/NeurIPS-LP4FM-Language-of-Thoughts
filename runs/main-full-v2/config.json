@@ -1,0 +1,406 @@
+{
+  "selection": {
+    "models": [
+      "qwen3-8b"
+    ],
+    "tasks": [
+      "mgsm",
+      "gmmlu"
+    ],
+    "languages": [
+      "en",
+      "hi",
+      "bn",
+      "te",
+      "sw",
+      "de",
+      "es"
+    ],
+    "conditions": [
+      "target",
+      "en_cot",
+      "free",
+      "mixed"
+    ],
+    "limit": null,
+    "n_samples": 1,
+    "backend": "auto",
+    "chunk_size": 64,
+    "max_new_tokens": null,
+    "model_isolation": "inprocess",
+    "config_path": null,
+    "instruction_language": null
+  },
+  "config": {
+    "seed": 20260730,
+    "languages": {
+      "en": {
+        "name": "English",
+        "script": "Latin",
+        "family": "Germanic",
+        "mgsm_source": "mgsm",
+        "gmmlu_config": "en",
+        "typ_distance": 0.0,
+        "resource_proxy_gb": 300.8,
+        "resource_tier": "high",
+        "is_anchor": true
+      },
+      "hi": {
+        "name": "Hindi",
+        "script": "Devanagari",
+        "family": "Indo-Aryan",
+        "mgsm_source": "gsm8k_hi_aligned",
+        "gmmlu_config": "hi",
+        "typ_distance": 0.7,
+        "resource_proxy_gb": 20.2,
+        "resource_tier": "mid",
+        "is_anchor": false
+      },
+      "bn": {
+        "name": "Bengali",
+        "script": "Bengali",
+        "family": "Indo-Aryan",
+        "mgsm_source": "mgsm",
+        "gmmlu_config": "bn",
+        "typ_distance": 0.72,
+        "resource_proxy_gb": 8.4,
+        "resource_tier": "mid",
+        "is_anchor": false
+      },
+      "te": {
+        "name": "Telugu",
+        "script": "Telugu",
+        "family": "Dravidian",
+        "mgsm_source": "mgsm",
+        "gmmlu_config": "te",
+        "typ_distance": 0.8,
+        "resource_proxy_gb": 2.5,
+        "resource_tier": "low",
+        "is_anchor": false
+      },
+      "sw": {
+        "name": "Swahili",
+        "script": "Latin",
+        "family": "Bantu",
+        "mgsm_source": "mgsm",
+        "gmmlu_config": "sw",
+        "typ_distance": 0.55,
+        "resource_proxy_gb": 1.6,
+        "resource_tier": "low",
+        "is_anchor": false
+      },
+      "de": {
+        "name": "German",
+        "script": "Latin",
+        "family": "Germanic",
+        "mgsm_source": "mgsm",
+        "gmmlu_config": "de",
+        "typ_distance": 0.15,
+        "resource_proxy_gb": 66.6,
+        "resource_tier": "high",
+        "is_anchor": false
+      },
+      "es": {
+        "name": "Spanish",
+        "script": "Latin",
+        "family": "Romance",
+        "mgsm_source": "mgsm",
+        "gmmlu_config": "es",
+        "typ_distance": 0.25,
+        "resource_proxy_gb": 53.3,
+        "resource_tier": "high",
+        "is_anchor": false
+      }
+    },
+    "default_languages": [
+      "en",
+      "hi",
+      "bn",
+      "te",
+      "sw",
+      "de",
+      "es"
+    ],
+    "tasks": {
+      "mgsm": {
+        "kind": "numeric",
+        "n_items": 250,
+        "hf_dataset": "juletxara/mgsm",
+        "hf_split": "test",
+        "hindi_bridge": {
+          "hi_dataset": "nvidia/GSM8K-Hi",
+          "hi_config": "default",
+          "hi_split": "test",
+          "en_dataset": "openai/gsm8k",
+          "en_config": "main",
+          "en_split": "test"
+        },
+        "max_new_tokens": 12288
+      },
+      "gmmlu": {
+        "kind": "mcq",
+        "n_items": 200,
+        "hf_dataset": "CohereLabs/Global-MMLU",
+        "hf_split": "test",
+        "cultural_sensitivity_label": "CA",
+        "max_new_tokens": 8192
+      }
+    },
+    "default_tasks": [
+      "mgsm",
+      "gmmlu"
+    ],
+    "models": {
+      "r1-llama-8b": {
+        "hf_id": "deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
+        "family": "r1_distill",
+        "thinking": "always",
+        "dtype": "bfloat16",
+        "max_model_len": 16384,
+        "decoding": {
+          "temperature": 0.6,
+          "top_p": 0.95,
+          "top_k": -1,
+          "min_p": 0.0
+        }
+      },
+      "qwen3-8b": {
+        "hf_id": "Qwen/Qwen3-8B",
+        "family": "qwen3",
+        "thinking": "switchable",
+        "dtype": "bfloat16",
+        "max_model_len": 16384,
+        "decoding": {
+          "temperature": 0.6,
+          "top_p": 0.95,
+          "top_k": 20,
+          "min_p": 0.0
+        }
+      },
+      "r1-qwen-7b": {
+        "hf_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+        "family": "r1_distill",
+        "thinking": "always",
+        "dtype": "bfloat16",
+        "max_model_len": 16384,
+        "decoding": {
+          "temperature": 0.6,
+          "top_p": 0.95,
+          "top_k": -1,
+          "min_p": 0.0
+        }
+      },
+      "qwen3-4b": {
+        "hf_id": "Qwen/Qwen3-4B",
+        "family": "qwen3",
+        "thinking": "switchable",
+        "dtype": "bfloat16",
+        "max_model_len": 16384,
+        "decoding": {
+          "temperature": 0.6,
+          "top_p": 0.95,
+          "top_k": 20,
+          "min_p": 0.0
+        }
+      },
+      "smoke-qwen-0_6b": {
+        "hf_id": "Qwen/Qwen3-0.6B",
+        "family": "qwen3",
+        "thinking": "switchable",
+        "dtype": "float32",
+        "max_model_len": 2048,
+        "decoding": {
+          "temperature": 0.6,
+          "top_p": 0.95,
+          "top_k": 20,
+          "min_p": 0.0
+        }
+      }
+    },
+    "default_models": [
+      "r1-llama-8b",
+      "qwen3-8b"
+    ],
+    "conditions": [
+      "target",
+      "en_cot",
+      "free",
+      "mixed"
+    ],
+    "instruction_language": "en",
+    "generation": {
+      "backend": "auto",
+      "n_samples": 1,
+      "chunk_size": 64,
+      "gpu_memory_utilization": 0.9,
+      "max_num_seqs": 128,
+      "swap_space_gb": 4,
+      "enforce_eager": false,
+      "tensor_parallel_size": 1,
+      "hf_batch_size": 4,
+      "model_isolation": "auto"
+    },
+    "scoring": {
+      "compliance_threshold": 0.5,
+      "anchor_threshold": 0.05,
+      "min_anchor_tokens": 1,
+      "faithfulness_subsample": 50,
+      "min_anchor_token_len": 4,
+      "bootstrap_iters": 10000,
+      "bootstrap_alpha": 0.05
+    }
+  },
+  "backend_resolved": "vllm",
+  "planned_generations": 12600,
+  "run_id": "main-full-v2",
+  "git_sha": "a2327b4-dirty",
+  "written_at": "2026-08-01T04:16:52+00:00",
+  "history": [
+    {
+      "written_at": "2026-07-31T20:10:11+00:00",
+      "git_sha": "a2327b4-dirty",
+      "selection": {
+        "models": [
+          "r1-llama-8b",
+          "qwen3-8b"
+        ],
+        "tasks": [
+          "mgsm",
+          "gmmlu"
+        ],
+        "languages": [
+          "en",
+          "hi",
+          "bn",
+          "te",
+          "sw",
+          "de",
+          "es"
+        ],
+        "conditions": [
+          "target",
+          "en_cot",
+          "free",
+          "mixed"
+        ],
+        "limit": null,
+        "n_samples": 1,
+        "backend": "auto",
+        "chunk_size": 64,
+        "max_new_tokens": null,
+        "model_isolation": "auto",
+        "config_path": null,
+        "instruction_language": null
+      }
+    },
+    {
+      "written_at": "2026-07-31T20:10:29+00:00",
+      "git_sha": "a2327b4-dirty",
+      "selection": {
+        "models": [
+          "r1-llama-8b"
+        ],
+        "tasks": [
+          "mgsm",
+          "gmmlu"
+        ],
+        "languages": [
+          "en",
+          "hi",
+          "bn",
+          "te",
+          "sw",
+          "de",
+          "es"
+        ],
+        "conditions": [
+          "target",
+          "en_cot",
+          "free",
+          "mixed"
+        ],
+        "limit": null,
+        "n_samples": 1,
+        "backend": "auto",
+        "chunk_size": 64,
+        "max_new_tokens": null,
+        "model_isolation": "inprocess",
+        "config_path": null,
+        "instruction_language": null
+      }
+    },
+    {
+      "written_at": "2026-07-31T20:32:38+00:00",
+      "git_sha": "a2327b4-dirty",
+      "selection": {
+        "models": [
+          "r1-llama-8b",
+          "qwen3-8b"
+        ],
+        "tasks": [
+          "mgsm",
+          "gmmlu"
+        ],
+        "languages": [
+          "en",
+          "hi",
+          "bn",
+          "te",
+          "sw",
+          "de",
+          "es"
+        ],
+        "conditions": [
+          "target",
+          "en_cot",
+          "free",
+          "mixed"
+        ],
+        "limit": null,
+        "n_samples": 1,
+        "backend": "auto",
+        "chunk_size": 64,
+        "max_new_tokens": null,
+        "model_isolation": "auto",
+        "config_path": null,
+        "instruction_language": null
+      }
+    },
+    {
+      "written_at": "2026-07-31T20:32:56+00:00",
+      "git_sha": "a2327b4-dirty",
+      "selection": {
+        "models": [
+          "r1-llama-8b"
+        ],
+        "tasks": [
+          "mgsm",
+          "gmmlu"
+        ],
+        "languages": [
+          "en",
+          "hi",
+          "bn",
+          "te",
+          "sw",
+          "de",
+          "es"
+        ],
+        "conditions": [
+          "target",
+          "en_cot",
+          "free",
+          "mixed"
+        ],
+        "limit": null,
+        "n_samples": 1,
+        "backend": "auto",
+        "chunk_size": 64,
+        "max_new_tokens": null,
+        "model_isolation": "inprocess",
+        "config_path": null,
+        "instruction_language": null
+      }
+    }
+  ]
+}

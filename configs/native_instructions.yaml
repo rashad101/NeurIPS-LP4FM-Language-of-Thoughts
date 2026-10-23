@@ -1,0 +1,76 @@
+# Native-language renderings of the four thinking-language instructions and the
+# answer-format instruction, used when `instruction_language: native`.
+#
+# STATUS: author-drafted. The main results in the paper use the English
+# instruction block (`instruction_language: en`) so that the instruction text is
+# held constant across languages and only the *named* thinking language varies.
+# These native templates support the robustness appendix promised in spec §5
+# ("prompt templates natively verified; released").
+#
+# BEFORE CITING THESE AS "NATIVELY VERIFIED": have a native speaker of each
+# language check each string, and record the reviewer in `verified_by`. Run
+#   ltd prompts --instruction-language native --show
+# to print every rendered prompt for review.
+
+hi:
+  verified_by: null
+  target: "पूरा तर्क (चेन-ऑफ-थॉट) हिन्दी में लिखें। अपनी सोच का हर चरण हिन्दी में ही लिखें, और अंतिम उत्तर भी हिन्दी में दें।"
+  en_cot: "पूरा तर्क (चेन-ऑफ-थॉट) अंग्रेज़ी में लिखें। अपनी सोच का हर चरण अंग्रेज़ी में ही लिखें, लेकिन अंतिम उत्तर हिन्दी में दें।"
+  free: "चरण-दर-चरण सोचें। आप जिस भी भाषा में सबसे अच्छा तर्क कर सकते हैं, उसी भाषा में सोचें।"
+  mixed: "तर्क मुख्य रूप से अंग्रेज़ी में करें, परंतु प्रश्न में आए नाम, मात्राएँ, उद्धरण और संस्कृति-विशिष्ट शब्द हिन्दी में ठीक वैसे ही रखें जैसे वे लिखे गए हैं। अंतिम उत्तर हिन्दी में दें।"
+  answer_numeric: "अपने उत्तर के अंत में अंतिम संख्यात्मक उत्तर अलग पंक्ति में इस रूप में लिखें: #### <संख्या>"
+  answer_mcq: "अपने उत्तर के अंत में अंतिम विकल्प अलग पंक्ति में इस रूप में लिखें: #### <अक्षर>, जहाँ <अक्षर> A, B, C या D है।"
+
+bn:
+  verified_by: null
+  target: "সম্পূর্ণ যুক্তি (চেইন-অফ-থট) বাংলায় লিখুন। আপনার চিন্তার প্রতিটি ধাপ বাংলাতেই লিখুন, এবং চূড়ান্ত উত্তরও বাংলায় দিন।"
+  en_cot: "সম্পূর্ণ যুক্তি (চেইন-অফ-থট) ইংরেজিতে লিখুন। আপনার চিন্তার প্রতিটি ধাপ ইংরেজিতেই লিখুন, তবে চূড়ান্ত উত্তর বাংলায় দিন।"
+  free: "ধাপে ধাপে চিন্তা করুন। যে ভাষায় আপনি সবচেয়ে ভালো যুক্তি সাজাতে পারেন, সেই ভাষাতেই চিন্তা করুন।"
+  mixed: "যুক্তি মূলত ইংরেজিতে সাজান, তবে প্রশ্নে থাকা নাম, পরিমাণ, উদ্ধৃতি এবং সংস্কৃতি-নির্দিষ্ট শব্দগুলি বাংলায় ঠিক যেমন লেখা আছে তেমনই রাখুন। চূড়ান্ত উত্তর বাংলায় দিন।"
+  answer_numeric: "আপনার উত্তরের শেষে চূড়ান্ত সাংখ্যিক উত্তরটি আলাদা লাইনে এই আকারে লিখুন: #### <সংখ্যা>"
+  answer_mcq: "আপনার উত্তরের শেষে চূড়ান্ত বিকল্পটি আলাদা লাইনে এই আকারে লিখুন: #### <অক্ষর>, যেখানে <অক্ষর> হল A, B, C বা D।"
+
+te:
+  verified_by: null
+  target: "పూర్తి తార్కిక వివరణను (చైన్-ఆఫ్-థాట్) తెలుగులో రాయండి. మీ ఆలోచనలోని ప్రతి దశను తెలుగులోనే రాయండి, తుది సమాధానం కూడా తెలుగులో ఇవ్వండి."
+  en_cot: "పూర్తి తార్కిక వివరణను (చైన్-ఆఫ్-థాట్) ఆంగ్లంలో రాయండి. మీ ఆలోచనలోని ప్రతి దశను ఆంగ్లంలోనే రాయండి, కానీ తుది సమాధానం తెలుగులో ఇవ్వండి."
+  free: "దశలవారీగా ఆలోచించండి. మీరు ఏ భాషలో ఉత్తమంగా తర్కించగలరో ఆ భాషలోనే ఆలోచించండి."
+  mixed: "తర్కాన్ని ప్రధానంగా ఆంగ్లంలో చేయండి, కానీ ప్రశ్నలోని పేర్లు, పరిమాణాలు, ఉల్లేఖనలు మరియు సంస్కృతి-సంబంధిత పదాలను తెలుగులో ఉన్నట్లుగానే ఉంచండి. తుది సమాధానం తెలుగులో ఇవ్వండి."
+  answer_numeric: "మీ ప్రతిస్పందన చివరిలో తుది సంఖ్యా సమాధానాన్ని ప్రత్యేక పంక్తిలో ఈ రూపంలో రాయండి: #### <సంఖ్య>"
+  answer_mcq: "మీ ప్రతిస్పందన చివరిలో తుది ఎంపికను ప్రత్యేక పంక్తిలో ఈ రూపంలో రాయండి: #### <అక్షరం>, ఇక్కడ <అక్షరం> A, B, C లేదా D."
+
+sw:
+  verified_by: null
+  target: "Andika hoja yako yote (mnyororo wa mawazo) kwa Kiswahili. Kila hatua ya kufikiri kwako iwe kwa Kiswahili, na jibu la mwisho pia liwe kwa Kiswahili."
+  en_cot: "Andika hoja yako yote (mnyororo wa mawazo) kwa Kiingereza. Kila hatua ya kufikiri kwako iwe kwa Kiingereza, lakini jibu la mwisho liwe kwa Kiswahili."
+  free: "Fikiri hatua kwa hatua. Fikiri kwa lugha yoyote unayoweza kutoa hoja bora zaidi."
+  mixed: "Fikiri hasa kwa Kiingereza, lakini hifadhi majina, vipimo, nukuu na maneno mahususi ya kitamaduni yaliyo katika swali kwa Kiswahili kama yalivyoandikwa. Jibu la mwisho liwe kwa Kiswahili."
+  answer_numeric: "Mwishoni wa jibu lako, andika jibu la mwisho la kihesabu kwenye mstari wake mwenyewe kwa mtindo huu: #### <namba>"
+  answer_mcq: "Mwishoni wa jibu lako, andika chaguo la mwisho kwenye mstari wake mwenyewe kwa mtindo huu: #### <herufi>, ambapo <herufi> ni A, B, C au D."
+
+de:
+  verified_by: null
+  target: "Schreibe deine vollständige Gedankenkette auf Deutsch. Jeder Denkschritt muss auf Deutsch sein, und die endgültige Antwort ebenfalls auf Deutsch."
+  en_cot: "Schreibe deine vollständige Gedankenkette auf Englisch. Jeder Denkschritt muss auf Englisch sein, die endgültige Antwort jedoch auf Deutsch."
+  free: "Denke Schritt für Schritt. Denke in der Sprache, in der du am besten argumentieren kannst."
+  mixed: "Denke überwiegend auf Englisch, behalte aber Namen, Mengenangaben, Zitate und kulturspezifische Begriffe aus der Frage genau so bei, wie sie auf Deutsch geschrieben sind. Gib die endgültige Antwort auf Deutsch."
+  answer_numeric: "Schreibe am Ende deiner Antwort das endgültige numerische Ergebnis in einer eigenen Zeile in dieser Form: #### <Zahl>"
+  answer_mcq: "Schreibe am Ende deiner Antwort die endgültige Option in einer eigenen Zeile in dieser Form: #### <Buchstabe>, wobei <Buchstabe> A, B, C oder D ist."
+
+es:
+  verified_by: null
+  target: "Escribe todo tu razonamiento (cadena de pensamiento) en español. Cada paso de tu razonamiento debe estar en español, y la respuesta final también en español."
+  en_cot: "Escribe todo tu razonamiento (cadena de pensamiento) en inglés. Cada paso de tu razonamiento debe estar en inglés, pero la respuesta final debe estar en español."
+  free: "Piensa paso a paso. Piensa en el idioma en el que mejor puedas razonar."
+  mixed: "Razona principalmente en inglés, pero conserva los nombres, las cantidades, las citas y los términos culturalmente específicos de la pregunta en español, exactamente como están escritos. Da la respuesta final en español."
+  answer_numeric: "Al final de tu respuesta, escribe el resultado numérico final en su propia línea con este formato: #### <número>"
+  answer_mcq: "Al final de tu respuesta, escribe la opción final en su propia línea con este formato: #### <letra>, donde <letra> es A, B, C o D."
+
+en:
+  verified_by: native
+  target: "Write your entire chain of thought in English. Every step of your reasoning must be in English, and give the final answer in English."
+  en_cot: "Write your entire chain of thought in English. Every step of your reasoning must be in English, and give the final answer in English."
+  free: "Think step by step. Think in whichever language you can reason best in."
+  mixed: "Reason mainly in English, keeping the names, quantities, quotations and culture-specific terms from the question exactly as written. Give the final answer in English."
+  answer_numeric: "At the end of your response, write the final numeric answer on its own line in this form: #### <number>"
+  answer_mcq: "At the end of your response, write the final option on its own line in this form: #### <letter>, where <letter> is A, B, C or D."

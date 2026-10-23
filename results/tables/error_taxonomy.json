@@ -1,0 +1,300 @@
+{
+  "note": "All figures over the six non-English languages; English cells are excluded here as they are from every contrast in the paper.",
+  "by_model_task_condition": {
+    "qwen3-8b|mgsm|target": {
+      "correct": 82.87,
+      "wrong_parsed": 16.2,
+      "no_answer": 0.0,
+      "truncated_reasoning": 0.13,
+      "truncated_rendering": 0.8
+    },
+    "qwen3-8b|mgsm|en_cot": {
+      "correct": 82.33,
+      "wrong_parsed": 17.2,
+      "no_answer": 0.0,
+      "truncated_reasoning": 0.0,
+      "truncated_rendering": 0.47
+    },
+    "qwen3-8b|mgsm|free": {
+      "correct": 83.53,
+      "wrong_parsed": 16.13,
+      "no_answer": 0.0,
+      "truncated_reasoning": 0.27,
+      "truncated_rendering": 0.07
+    },
+    "qwen3-8b|mgsm|mixed": {
+      "correct": 83.73,
+      "wrong_parsed": 16.2,
+      "no_answer": 0.0,
+      "truncated_reasoning": 0.0,
+      "truncated_rendering": 0.07
+    },
+    "qwen3-8b|gmmlu|target": {
+      "correct": 72.0,
+      "wrong_parsed": 25.25,
+      "no_answer": 0.0,
+      "truncated_reasoning": 1.08,
+      "truncated_rendering": 1.67
+    },
+    "qwen3-8b|gmmlu|en_cot": {
+      "correct": 72.42,
+      "wrong_parsed": 26.67,
+      "no_answer": 0.0,
+      "truncated_reasoning": 0.67,
+      "truncated_rendering": 0.25
+    },
+    "qwen3-8b|gmmlu|free": {
+      "correct": 73.58,
+      "wrong_parsed": 25.17,
+      "no_answer": 0.0,
+      "truncated_reasoning": 1.17,
+      "truncated_rendering": 0.08
+    },
+    "qwen3-8b|gmmlu|mixed": {
+      "correct": 72.83,
+      "wrong_parsed": 26.42,
+      "no_answer": 0.0,
+      "truncated_reasoning": 0.33,
+      "truncated_rendering": 0.42
+    },
+    "r1-llama-8b|mgsm|target": {
+      "correct": 6.07,
+      "wrong_parsed": 80.47,
+      "no_answer": 0.07,
+      "truncated_reasoning": 10.07,
+      "truncated_rendering": 3.33
+    },
+    "r1-llama-8b|mgsm|en_cot": {
+      "correct": 6.4,
+      "wrong_parsed": 84.6,
+      "no_answer": 0.07,
+      "truncated_reasoning": 7.8,
+      "truncated_rendering": 1.13
+    },
+    "r1-llama-8b|mgsm|free": {
+      "correct": 4.47,
+      "wrong_parsed": 88.33,
+      "no_answer": 0.27,
+      "truncated_reasoning": 5.53,
+      "truncated_rendering": 1.4
+    },
+    "r1-llama-8b|mgsm|mixed": {
+      "correct": 6.13,
+      "wrong_parsed": 83.47,
+      "no_answer": 0.27,
+      "truncated_reasoning": 7.47,
+      "truncated_rendering": 2.67
+    },
+    "r1-llama-8b|gmmlu|target": {
+      "correct": 27.25,
+      "wrong_parsed": 63.42,
+      "no_answer": 0.67,
+      "truncated_reasoning": 7.0,
+      "truncated_rendering": 1.67
+    },
+    "r1-llama-8b|gmmlu|en_cot": {
+      "correct": 27.75,
+      "wrong_parsed": 64.42,
+      "no_answer": 1.42,
+      "truncated_reasoning": 5.75,
+      "truncated_rendering": 0.67
+    },
+    "r1-llama-8b|gmmlu|free": {
+      "correct": 30.08,
+      "wrong_parsed": 60.17,
+      "no_answer": 1.75,
+      "truncated_reasoning": 7.42,
+      "truncated_rendering": 0.58
+    },
+    "r1-llama-8b|gmmlu|mixed": {
+      "correct": 31.17,
+      "wrong_parsed": 62.58,
+      "no_answer": 0.83,
+      "truncated_reasoning": 4.25,
+      "truncated_rendering": 1.17
+    }
+  },
+  "by_model": {
+    "qwen3-8b": {
+      "correct": 78.49,
+      "wrong_parsed": 20.63,
+      "no_answer": 0.0,
+      "truncated_reasoning": 0.42,
+      "truncated_rendering": 0.46,
+      "n": 10800
+    },
+    "r1-llama-8b": {
+      "correct": 16.12,
+      "wrong_parsed": 74.63,
+      "no_answer": 0.61,
+      "truncated_reasoning": 7.0,
+      "truncated_rendering": 1.64,
+      "n": 10800
+    }
+  },
+  "recoverable_rendering_truncations": [
+    {
+      "model": "qwen3-8b",
+      "task": "mgsm",
+      "language": "sw",
+      "condition": "target",
+      "item_id": "mgsm-0012",
+      "gold": "13",
+      "scored_prediction": "3"
+    },
+    {
+      "model": "qwen3-8b",
+      "task": "mgsm",
+      "language": "sw",
+      "condition": "target",
+      "item_id": "mgsm-0019",
+      "gold": "6",
+      "scored_prediction": "3"
+    },
+    {
+      "model": "qwen3-8b",
+      "task": "mgsm",
+      "language": "sw",
+      "condition": "target",
+      "item_id": "mgsm-0104",
+      "gold": "500",
+      "scored_prediction": "1000"
+    },
+    {
+      "model": "qwen3-8b",
+      "task": "mgsm",
+      "language": "sw",
+      "condition": "target",
+      "item_id": "mgsm-0164",
+      "gold": "15",
+      "scored_prediction": "3"
+    },
+    {
+      "model": "qwen3-8b",
+      "task": "mgsm",
+      "language": "sw",
+      "condition": "target",
+      "item_id": "mgsm-0197",
+      "gold": "6277",
+      "scored_prediction": "9092"
+    },
+    {
+      "model": "qwen3-8b",
+      "task": "mgsm",
+      "language": "sw",
+      "condition": "en_cot",
+      "item_id": "mgsm-0109",
+      "gold": "28",
+      "scored_prediction": "3"
+    },
+    {
+      "model": "qwen3-8b",
+      "task": "mgsm",
+      "language": "sw",
+      "condition": "en_cot",
+      "item_id": "mgsm-0157",
+      "gold": "80",
+      "scored_prediction": "15"
+    },
+    {
+      "model": "qwen3-8b",
+      "task": "mgsm",
+      "language": "sw",
+      "condition": "en_cot",
+      "item_id": "mgsm-0246",
+      "gold": "27000",
+      "scored_prediction": "5"
+    },
+    {
+      "model": "qwen3-8b",
+      "task": "mgsm",
+      "language": "te",
+      "condition": "target",
+      "item_id": "mgsm-0041",
+      "gold": "200",
+      "scored_prediction": "4200"
+    },
+    {
+      "model": "qwen3-8b",
+      "task": "mgsm",
+      "language": "te",
+      "condition": "target",
+      "item_id": "mgsm-0186",
+      "gold": "5",
+      "scored_prediction": "7.777"
+    },
+    {
+      "model": "qwen3-8b",
+      "task": "mgsm",
+      "language": "te",
+      "condition": "target",
+      "item_id": "mgsm-0227",
+      "gold": "9",
+      "scored_prediction": "1"
+    },
+    {
+      "model": "qwen3-8b",
+      "task": "gmmlu",
+      "language": "sw",
+      "condition": "target",
+      "item_id": "gmmlu-abstract_algebra/test/33",
+      "gold": "C",
+      "scored_prediction": "A"
+    },
+    {
+      "model": "qwen3-8b",
+      "task": "gmmlu",
+      "language": "sw",
+      "condition": "target",
+      "item_id": "gmmlu-human_aging/test/198",
+      "gold": "C",
+      "scored_prediction": "A"
+    },
+    {
+      "model": "qwen3-8b",
+      "task": "gmmlu",
+      "language": "sw",
+      "condition": "target",
+      "item_id": "gmmlu-human_aging/test/78",
+      "gold": "B",
+      "scored_prediction": "D"
+    },
+    {
+      "model": "qwen3-8b",
+      "task": "gmmlu",
+      "language": "bn",
+      "condition": "en_cot",
+      "item_id": "gmmlu-college_computer_science/test/5",
+      "gold": "C",
+      "scored_prediction": "A"
+    },
+    {
+      "model": "r1-llama-8b",
+      "task": "gmmlu",
+      "language": "te",
+      "condition": "target",
+      "item_id": "gmmlu-electrical_engineering/test/5",
+      "gold": "D",
+      "scored_prediction": "A"
+    },
+    {
+      "model": "r1-llama-8b",
+      "task": "gmmlu",
+      "language": "te",
+      "condition": "mixed",
+      "item_id": "gmmlu-college_biology/test/25",
+      "gold": "D",
+      "scored_prediction": "A"
+    },
+    {
+      "model": "r1-llama-8b",
+      "task": "gmmlu",
+      "language": "te",
+      "condition": "mixed",
+      "item_id": "gmmlu-computer_security/test/7",
+      "gold": "A",
+      "scored_prediction": "C"
+    }
+  ],
+  "n_recoverable": 18
+}

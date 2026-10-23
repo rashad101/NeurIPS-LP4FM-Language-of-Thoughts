@@ -1,0 +1,231 @@
+# Experiment configuration for
+# "Position: The Language of Thought Is a Design Choice, Not a Compliance Problem"
+#
+# Every value here is frozen into runs/<run_id>/config.json at generation time,
+# so a run is always reproducible from its own directory.
+
+seed: 20260730
+
+# ---------------------------------------------------------------------------
+# Languages
+# ---------------------------------------------------------------------------
+# typ_distance: coarse typological distance from English in [0, 1], assigned from
+#   family + dominant word order + script (Germanic/Latin/SVO -> low; Indo-Aryan
+#   and Dravidian/Brahmic/SOV -> high). Used only as a *presentation* axis in
+#   Figure 4; the paper must state that it is an author-assigned ordinal proxy,
+#   not a measured lang2vec distance.
+# resource_proxy_gb: CC-100 monolingual corpus size in GB (Conneau et al., 2020,
+#   Table 6). VERIFY these numbers against the paper before citing them; they are
+#   used as a secondary x-axis only, and `fertility` (measured at score time) is
+#   the primary resource proxy in the figures.
+languages:
+  en:
+    name: English
+    script: Latin
+    family: Germanic
+    mgsm_source: mgsm            # juletxara/mgsm config `en`
+    gmmlu_config: en
+    typ_distance: 0.00
+    resource_proxy_gb: 300.8
+    resource_tier: high
+    is_anchor: true              # English anchor condition-set; Target == En-CoT
+  hi:
+    name: Hindi
+    script: Devanagari
+    family: Indo-Aryan
+    mgsm_source: gsm8k_hi_aligned  # built from nvidia/GSM8K-Hi (see note below)
+    gmmlu_config: hi
+    typ_distance: 0.70
+    resource_proxy_gb: 20.2
+    resource_tier: mid
+    is_anchor: false
+  bn:
+    name: Bengali
+    script: Bengali
+    family: Indo-Aryan
+    mgsm_source: mgsm
+    gmmlu_config: bn
+    typ_distance: 0.72
+    resource_proxy_gb: 8.4
+    resource_tier: mid
+    is_anchor: false
+  te:
+    name: Telugu
+    script: Telugu
+    family: Dravidian
+    mgsm_source: mgsm
+    gmmlu_config: te
+    typ_distance: 0.80
+    resource_proxy_gb: 2.5
+    resource_tier: low
+    is_anchor: false
+  sw:
+    name: Swahili
+    script: Latin
+    family: Bantu
+    mgsm_source: mgsm
+    gmmlu_config: sw
+    typ_distance: 0.55
+    resource_proxy_gb: 1.6
+    resource_tier: low
+    is_anchor: false
+  de:
+    name: German
+    script: Latin
+    family: Germanic
+    mgsm_source: mgsm
+    gmmlu_config: de
+    typ_distance: 0.15
+    resource_proxy_gb: 66.6
+    resource_tier: high
+    is_anchor: false
+  es:
+    name: Spanish
+    script: Latin
+    family: Romance
+    mgsm_source: mgsm
+    gmmlu_config: es
+    typ_distance: 0.25
+    resource_proxy_gb: 53.3
+    resource_tier: high
+    is_anchor: false
+
+# Languages used by default (English kept as the anchor per spec §4).
+default_languages: [en, hi, bn, te, sw, de, es]
+
+# ---------------------------------------------------------------------------
+# Tasks / data
+# ---------------------------------------------------------------------------
+tasks:
+  mgsm:
+    kind: numeric
+    n_items: 250            # MGSM test is exactly 250 items, item-aligned across languages
+    hf_dataset: juletxara/mgsm
+    hf_split: test
+    # Hindi is NOT in MGSM (configs: bn de en es fr ja ru sw te th zh). We build an
+    # item-aligned Hindi MGSM by taking the same GSM8K test indices from a Hindi
+    # translation of GSM8K test, verified by matching gold answers.
+    hindi_bridge:
+      hi_dataset: nvidia/GSM8K-Hi
+      hi_config: default
+      hi_split: test
+      en_dataset: openai/gsm8k
+      en_config: main
+      en_split: test
+    max_new_tokens: 12288
+  gmmlu:
+    kind: mcq
+    n_items: 200            # stratified by subject_category over the CA split
+    hf_dataset: CohereLabs/Global-MMLU
+    hf_split: test
+    cultural_sensitivity_label: CA   # "culturally agnostic" (spec §4)
+    max_new_tokens: 8192
+
+default_tasks: [mgsm, gmmlu]
+
+# ---------------------------------------------------------------------------
+# Models
+# ---------------------------------------------------------------------------
+# NOTE ON THE SPEC: spec §3 names "DeepSeek-R1-Distill-Qwen-8B", which does not
+# exist on the Hub. The R1 distill family is Qwen-1.5B/7B/14B/32B and Llama-8B/70B.
+# We therefore keep two substitutes and default to the Llama-8B one because it
+# matches the 8B scale AND gives a second, independent tokenizer (which the
+# fertility leg of H3 needs — Qwen3-8B and R1-Distill-Qwen-7B share a tokenizer).
+models:
+  r1-llama-8b:
+    hf_id: deepseek-ai/DeepSeek-R1-Distill-Llama-8B
+    family: r1_distill
+    thinking: always          # template pre-opens <think>
+    dtype: bfloat16
+    max_model_len: 16384
+    decoding: {temperature: 0.6, top_p: 0.95, top_k: -1, min_p: 0.0}
+  qwen3-8b:
+    hf_id: Qwen/Qwen3-8B
+    family: qwen3
+    thinking: switchable      # enable_thinking=True in the chat template
+    dtype: bfloat16
+    max_model_len: 16384
+    decoding: {temperature: 0.6, top_p: 0.95, top_k: 20, min_p: 0.0}
+  r1-qwen-7b:
+    hf_id: deepseek-ai/DeepSeek-R1-Distill-Qwen-7B
+    family: r1_distill
+    thinking: always
+    dtype: bfloat16
+    max_model_len: 16384
+    decoding: {temperature: 0.6, top_p: 0.95, top_k: -1, min_p: 0.0}
+  qwen3-4b:
+    hf_id: Qwen/Qwen3-4B
+    family: qwen3
+    thinking: switchable
+    dtype: bfloat16
+    max_model_len: 16384
+    decoding: {temperature: 0.6, top_p: 0.95, top_k: 20, min_p: 0.0}
+  # Tiny model for CPU/dry-run plumbing checks only. Never report its numbers.
+  smoke-qwen-0_6b:
+    hf_id: Qwen/Qwen3-0.6B
+    family: qwen3
+    thinking: switchable
+    dtype: float32
+    max_model_len: 2048
+    decoding: {temperature: 0.6, top_p: 0.95, top_k: 20, min_p: 0.0}
+
+default_models: [r1-llama-8b, qwen3-8b]
+
+# ---------------------------------------------------------------------------
+# Thinking-language conditions (spec §5)
+# ---------------------------------------------------------------------------
+conditions: [target, en_cot, free, mixed]
+
+# `en` keeps the instruction language constant across conditions and languages,
+# which is what makes the four conditions comparable. `native` swaps in the
+# translated instruction blocks from configs/native_instructions.yaml and exists
+# for the robustness appendix.
+instruction_language: en
+
+# ---------------------------------------------------------------------------
+# Generation
+# ---------------------------------------------------------------------------
+generation:
+  backend: auto            # auto | vllm | hf
+  n_samples: 1             # single pass; >1 enables maj@k (not used in the paper)
+  chunk_size: 64           # predictions are flushed to disk after every chunk
+  # NOTE: at max_model_len 16384 the KV cache, not the weights, is the binding
+  # constraint. vLLM will simply schedule fewer concurrent sequences than
+  # max_num_seqs when the cache fills, so this is safe on a smaller card — it
+  # just runs slower. Measured on a 96 GB card.
+  gpu_memory_utilization: 0.90
+  max_num_seqs: 128
+  swap_space_gb: 4         # ignored by vLLM >= 0.26 (no CPU swap in the V1 engine)
+  enforce_eager: false
+  tensor_parallel_size: 1
+  hf_batch_size: 4         # transformers fallback (CPU / MPS dry runs)
+  # Models are ALWAYS loaded one at a time; this only controls how the previous one
+  # is released. vLLM reserves `gpu_memory_utilization` of the card for the KV
+  # cache (0.90 -> ~86 GB of the RTX PRO 6000's 96 GB), so two co-resident
+  # models cannot fit.
+  #   subprocess — each model runs in its own child process; the OS guarantees a
+  #                full release on exit, regardless of what vLLM leaves behind
+  #   inprocess  — tear the engine down in place (fast, no process churn)
+  #   auto       — subprocess when >1 model runs on vLLM, else inprocess
+  model_isolation: auto
+
+# ---------------------------------------------------------------------------
+# Scoring / analysis
+# ---------------------------------------------------------------------------
+scoring:
+  # Trace counts as compliant with the target language when >= this share of its
+  # alphabetic characters sit in the target script (non-Latin scripts), or when
+  # per-line langid votes majority-target (Latin-script targets).
+  compliance_threshold: 0.50
+  # Anchor detection. For non-Latin-script targets a trace "retains target-language
+  # anchors" when it contains at least `min_anchor_tokens` words in the target
+  # script — counted in tokens, not characters, because a few preserved words in a
+  # long English trace (the Mixed-CoT signature, H2) is a negligible *character*
+  # share. `anchor_threshold` is the share fallback used for Latin-script targets
+  # (de/es/sw), where script ranges carry no signal.
+  anchor_threshold: 0.05
+  min_anchor_tokens: 1
+  faithfulness_subsample: 50     # spec §6: retention on 50-item subsamples
+  min_anchor_token_len: 4
+  bootstrap_iters: 10000
+  bootstrap_alpha: 0.05

@@ -1,4 +1,4 @@
-# The Language of Thought Is a Design Choice — Unifying Demonstration
+# The Language of Thought Is a Design Choice, Not a Compliance Problem
 
 Code for the empirical demonstration in **"Position: The Language of Thought Is a
 Design Choice, Not a Compliance Problem"** (LP4FM @ NeurIPS 2026, position track).
